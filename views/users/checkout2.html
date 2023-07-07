@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Address Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 50px;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .address-details {
+      margin-bottom: 20px;
+    }
+
+    .address-details p {
+      margin: 0;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #4caf50;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      margin-right: 10px;
+    }
+
+    .btn:hover {
+      background-color: #45a049;
+    }
+
+    .btn-primary {
+      background-color: #4285f4;
+    }
+
+    .btn-primary:hover {
+      background-color: #357ae8;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Address Details</h1>
+    <div class="card">
+      <div class="address-details">
+        <p><strong>Address:</strong></p>
+        <p>123 Main St, City, Country</p>
+        <br>
+      </div>
+      <div>
+        <a class="btn btn-primary" href="/edit-address">Edit</a>
+        <a class="btn" href="/delete-address">Delete</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

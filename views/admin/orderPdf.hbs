@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>DASHMIN - Bootstrap Admin Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="/adminPages/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/adminPages/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/adminPages/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="/adminPages/css/style.css" rel="stylesheet">
+    {{!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> --}}
+
+
+
+</head>
+
+<body>
+    <div class="container-xxl position-relative bg-white d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner"
+            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Sidebar Start -->
+        <div class="sidebar pe-4 pb-3">
+            <nav class="navbar bg-light navbar-light">
+                <a href="index.html" class="navbar-brand mx-4 mb-3">
+                    <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>FURNITUREIO</h3>
+                </a>
+                <div class="d-flex align-items-center ms-4 mb-4">
+                    <div class="position-relative">
+                        {{!-- <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;"> --}}
+                        <div
+                            class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1">
+                        </div>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="mb-0">Jhon Doe</h6>
+                        <span>Admin</span>
+                    </div>
+                </div>
+                <div class="navbar-nav w-100">
+                    <a href="/admin/home" class="nav-item nav-link"><i
+                            class="fa fa-tachometer-alt me-2"></i>DASHBOARD</a>
+                    <a href="/admin/userList" class="nav-item nav-link active"><i class="fa fa-th me-2"></i>CUSTOMER</a>
+                    <a href="/admin/categoryList" class="nav-item nav-link"><i
+                            class="fa fa-keyboard me-2"></i>CATEGORY</a>
+                    <a href="/admin/productList" class="nav-item nav-link"><i class="fa fa-table me-2"></i>PRODUCTS</a>
+                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>COUPON</a>
+                </div>
+            </nav>
+        </div>
+        <!-- Sidebar End -->
+
+
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
+                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+                    <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
+                </a>
+                <a href="#" class="sidebar-toggler flex-shrink-0">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <form class="d-none d-md-flex ms-4">
+                    <input class="form-control border-0" type="search" placeholder="Search">
+                </form>
+                <div class="navbar-nav align-items-center ms-auto">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-envelope me-lg-2"></i>
+                            <span class="d-none d-lg-inline-flex">Message</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    {{!-- <img class="rounded-circle" src="img/user.jpg" alt=""
+                                        style="width: 40px; height: 40px;"> --}}
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                        <small>15 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    {{!-- <img class="rounded-circle" src="img/user.jpg" alt=""
+                                        style="width: 40px; height: 40px;"> --}}
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                        <small>15 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    {{!-- <img class="rounded-circle" src="img/user.jpg" alt=""
+                                        style="width: 40px; height: 40px;"> --}}
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                        <small>15 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item text-center">See all message</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-bell me-lg-2"></i>
+                            <span class="d-none d-lg-inline-flex">Notificatin</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">Profile updated</h6>
+                                <small>15 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">New user added</h6>
+                                <small>15 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">Password changed</h6>
+                                <small>15 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item text-center">See all notifications</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            {{!-- <img class="rounded-circle me-lg-2" src="img/user.jpg" alt=""
+                                style="width: 40px; height: 40px;"> --}}
+                            <span class="d-none d-lg-inline-flex">John Doe</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">My Profile</a>
+                            <a href="#" class="dropdown-item">Settings</a>
+                            <a href="#" class="dropdown-item">Log Out</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Navbar End -->
+
+
+            <!-- Table Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-12">
+                        <div class="bg-light rounded h-100 p-4 ">
+                            <h6 class="mb-4">SALES REPORT</h6>
+
+                            <div class="row" style="height: 30px; ">
+                                <div class="col-7">
+                                    <form class="d-flex flex-column flex-md-row" action="/orderSearch"
+                                        style="max-width:35em; height:40px;" method="post">
+
+                                        <input name="fromdate"
+                                            style="margin-left: 10px;border: 1px solid black; max-width:10em ;"
+                                            type="date" id="form3Examplea2" class="form-control me-2" required />
+                                        <h6 style="margin-left: 10px;" class="align-self-center">to</h6>
+
+                                        <input name="todate"
+                                            style="margin-left: 10px;border: 1px solid black; max-width:10em;"
+                                            type="date" id="form3Examplea2" class="form-control ms-2 me-3" required />
+
+                                        <a style="margin-left: 10px;" class="btn btn-outline-primary"
+                                            onclick="getorders()">Get
+                                            Orders</a>
+
+                                    </form>
+                                </div>
+                                <div class="col-2 ms-auto">
+                                    <button class="btn btn-primary" style="margin-left: 10px;"
+                                        onclick="getpdf()">Download PDF</button>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+                            {{!-- <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">No.</th>
+                                        <th scope="col">First Name</th>
+                                        <th scope="col">Last Name</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Mobile</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                {{#each user}}
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"></th>
+                                        <td>{{this.firstName}}</td>
+                                        <td>{{this.lastName}}</td>
+                                        <td>{{this.email}}</td>
+                                    </tr>
+                                </tbody>
+                                {{/each}}
+                            </table> --}}
+                            <table class="w-100 mt-3">
+                                <thead class="border p-5 m-0">
+                                    <tr class="row-fluid d-flex justify-content-between">
+                                        <th class="col-1  ms-3 p-3 d-flex align-items-center">No</th>
+                                        <th class="col d-flex align-items-center justify-content-center">Order ID</th>
+                                        <th class="col d-flex align-items-center justify-content-center">Status</th>
+                                        <th class="col-4 d-flex align-items-center justify-content-center">Payment mode
+                                        </th>
+                                        <th class="col d-flex align-items-center justify-content-center">Order Date</th>
+                                        <th class="col d-flex align-items-center justify-content-center ps-3 pe-3">
+                                            OrderBill</th>
+
+
+                                    </tr>
+                                </thead>
+                                <tbody class="d-flex flex-column gap-2 mt-4 rowClassParent">
+                                   
+                                    <tr class=" row-fluid d-flex justify-content-between border rowClass">
+                                        <td class="col-1  ms-3 p-3 d-flex align-items-center"
+                                            style="border-right: 1px solid rgb(231, 231, 231);"></td>
+                                        <td class="col  d-flex align-items-center justify-content-center"
+                                            style="border-right: 1px solid rgb(231, 231, 231);"></td>
+                                        <td class="col  d-flex align-items-center  justify-content-center"
+                                            style="border-right: 1px solid rgb(231, 231, 231);"></td>
+                                        <td class="col-4 d-flex align-items-center  ps-3 pe-3 justify-content-center"
+                                            style="border-right: 1px solid rgb(231, 231, 231);"></td>
+                                        <td class="col d-flex align-items-center  justify-content-center"
+                                            style="border-right: 1px solid rgb(231, 231, 231);"></td>
+                                        <td class="col d-flex align-items-center  justify-content-center"
+                                            style="border-right: 1px solid rgb(231, 231, 231);"></td>
+                                    </tr>
+                                    
+                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Table End -->
+
+
+            <!-- Footer Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-light rounded-top p-4">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 text-center text-sm-start">
+                            &copy; <a href="#">Your Site Name</a>, All Right Reserved.
+                        </div>
+                        <div class="col-12 col-sm-6 text-center text-sm-end">
+                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                            Designed By <a href="https://htmlcodex.com">HTML Codex</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer End -->
+        </div>
+        <!-- Content End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <div style="text-align: center;">Total: <span id="total"></span></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha384-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        crossorigin="anonymous"></script>
+
+    <script src="/js/report.js"></script>
+
+    <script>
+
+
+        const rowClass = document.querySelectorAll('.rowClass')
+        const rowClassParent = document.querySelector('.rowClassParent')
+
+        async function getorders() {
+
+            let fromDate = $('input[name="fromdate"]').val();
+            let toDate = $('input[name="todate"]').val();
+            const rows = document.getElementById('rows')
+
+            console.log(fromDate)
+            console.log(toDate)
+
+
+            const response = await fetch('/admin/getOrders', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    fromDate: fromDate,
+                    toDate: toDate
+                }),
+
+            });
+            rowClass.forEach(row => {
+                row.innerHTML = ''
+            })
+            const data = await response.json()
+            
+            console.log(data)
+
+            console.log('before extract data.orderDAta')
+            const orderdata = data.orderdata
+            console.log('here im now')
+            console.log(orderdata)
+            let total = 0;
+            orderdata.forEach((order,index) => {
+                const date = new Date(order.date);
+                const formattedDate = new Intl.DateTimeFormat('en-IN', {
+                    day: '2-digit',
+                    month: 'short',
+                    year: 'numeric',
+                    hour: 'numeric',
+                    minute: 'numeric',
+                    hour12: true
+                }).format(date);
+
+                total += order.total;
+                const totalElement = document.getElementById('total');
+
+                if(totalElement){
+                            totalElement.textContent = `₹${total}`
+               
+                    rowClassParent.innerHTML +=
+                    ` <tr class=" row-fluid d-flex justify-content-between border rowClass">
+                                        <td class="col-1  ms-3 p-3 d-flex align-items-center"
+                                            style="border-right: 1px solid rgb(231, 231, 231);"> ${index + 1}</td>
+                                        <td class="col  d-flex align-items-center justify-content-center"
+                                            style="border-right: 1px solid rgb(231, 231, 231);">${order._id}</td>
+                                        <td class="col  d-flex align-items-center  justify-content-center"
+                                            style="border-right: 1px solid rgb(231, 231, 231);">${order.status}</td>
+                                        <td class="col-4 d-flex align-items-center  ps-3 pe-3 justify-content-center"
+                                            style="border-right: 1px solid rgb(231, 231, 231);">${order.paymentMethod}</td>
+                                        <td class="col d-flex align-items-center  justify-content-center"
+                                            style="border-right: 1px solid rgb(231, 231, 231);">${formattedDate}</td>
+                                        <td class="col d-flex align-items-center  justify-content-center"
+                                            style="border-right: 1px solid rgb(231, 231, 231);">₹ ${order.total}
+                                            </td>
+                                    </tr>`
+                }
+               
+            })
+        }
+
+
+        //PDF PRINT
+        async function getpdf() {
+            window.print()
+        }
+
+
+    </script>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/adminPages/lib/chart/chart.min.js"></script>
+    <script src="/adminPages/lib/easing/easing.min.js"></script>
+    <script src="/adminPages/lib/waypoints/waypoints.min.js"></script>
+    <script src="/adminPages/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/adminPages/lib/tempusdominus/js/moment.min.js"></script>
+    <script src="/adminPages/lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="/adminPages/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="/adminPages/js/main.js"></script>
+
+
+</body>
+
+</html>

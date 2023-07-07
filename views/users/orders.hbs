@@ -1,0 +1,19 @@
+{{#each orders}}
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Order ID: {{this.orderId}}</h5>
+      <p class="card-text">Date: {{this.orderDate}}</p>
+      <p class="card-text">Customer: {{this.customerName}}</p>
+      <p class="card-text">Total Amount: {{this.totalAmount}}</p>
+      <div class="product-details">
+        <h6>Ordered Products:</h6>
+        {{#each this.products}}
+          <div class="product">
+            <img src="{{this.image}}" alt="{{this.name}}">
+            <p>{{this.name}}</p>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+{{/each}}
