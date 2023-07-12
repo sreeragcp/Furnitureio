@@ -10,7 +10,7 @@ const mongoose = require('mongoose');
 const moment = require('moment')
 const { log } = require('handlebars/runtime');
 const { ObjectId } = require('mongodb');
-const puppeteer = require('puppeteer');
+// const puppeteer = require('puppeteer');
 // const randomstring = require('randomstring')
 
 
@@ -1019,57 +1019,57 @@ const orderConfirmation = async (req, res) => {
     }
 }
 
-const downloadInvoice = async (req, res) => {
-    try {
+// const downloadInvoice = async (req, res) => {
+//     try {
 
-        const orderId = req.query.orderId
-        const orderData = await Order.findById(orderId)
-        const browser = await puppeteer.launch({ headless: false })
-        const page = await browser.newPage()
+//         const orderId = req.query.orderId
+//         const orderData = await Order.findById(orderId)
+//         const browser = await puppeteer.launch({ headless: false })
+//         const page = await browser.newPage()
 
-        await page.goto(`${req.protocol}://${req.get('host')}/invoice?orderId=${orderId}`, {
-            waitUntil: 'networkidle2'
-        })
+//         await page.goto(`${req.protocol}://${req.get('host')}/invoice?orderId=${orderId}`, {
+//             waitUntil: 'networkidle2'
+//         })
 
-        const todayDate = new Date()
+//         const todayDate = new Date()
 
-        const pdfBuffer = await page.pdf({
-            format: 'A4',
-            printBackground: true,
-        });
+//         const pdfBuffer = await page.pdf({
+//             format: 'A4',
+//             printBackground: true,
+//         });
 
-        await browser.close()
+//         await browser.close()
 
-        res.set({
-            'Content-Type': 'application/pdf',
-            'Content-Disposition': `attachment; filename=${orderData.orderId}Invoice.pdf`,
-        });
+//         res.set({
+//             'Content-Type': 'application/pdf',
+//             'Content-Disposition': `attachment; filename=${orderData.orderId}Invoice.pdf`,
+//         });
 
-        res.send(pdfBuffer);
+//         res.send(pdfBuffer);
 
-    } catch (error) {
-        console.log(error.message);
-    }
-}
+//     } catch (error) {
+//         console.log(error.message);
+//     }
+// }
 
-const invoice = async (req, res) => {
-    try {
+// const invoice = async (req, res) => {
+//     try {
 
-        const orderId = req.query.orderId;
-        const orderData = await Order.findById(orderId)
-        const userDatas = await User.findById(orderData.userId)
-        const address = await Address.findById(orderData.address)
+//         const orderId = req.query.orderId;
+//         const orderData = await Order.findById(orderId)
+//         const userDatas = await User.findById(orderData.userId)
+//         const address = await Address.findById(orderData.address)
 
-        console.log(orderData, 1003)
-        console.log(userDatas, 1004)
-        console.log(address, 1005)
-        const invoiceDate = moment(new Date()).format('MMMM D, YYYY')
-        res.render('invoice', { orderData, userDatas, invoiceDate, address })
+//         console.log(orderData, 1003)
+//         console.log(userDatas, 1004)
+//         console.log(address, 1005)
+//         const invoiceDate = moment(new Date()).format('MMMM D, YYYY')
+//         res.render('invoice', { orderData, userDatas, invoiceDate, address })
 
-    } catch (error) {
-        console.log(error.message);
-    }
-}
+//     } catch (error) {
+//         console.log(error.message);
+//     }
+// }
 
 
 
@@ -1383,8 +1383,8 @@ module.exports = {
     checkStock,
     placeOrder,
     orderConfirmation,
-    downloadInvoice,
-    invoice,
+    // downloadInvoice,
+    // invoice,
     loadUserProfile,
     userAddress,
     shopPage,

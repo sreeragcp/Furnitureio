@@ -9,7 +9,7 @@ const path = require("path");
 // const { response } = require("../app");
 const jsPdf = require("jspdf")
 const PDFDocument = require('pdfkit');
-const puppeteer = require('puppeteer');
+
 
 let months = []
 let odersByMonth = []

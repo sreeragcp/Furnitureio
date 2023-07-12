@@ -74,8 +74,8 @@ user_route.get('/checkStock',auth.isLogin,userController.checkStock)
 user_route.post('/placeOrder',auth.isLogin,userController.placeOrder)
 user_route.get('/orderConfirmation',userController.orderConfirmation)
 user_route.post('/validateCoupon',couponController.validateCoupon)
-user_route.get('/downloadInvoice',auth.blockCheck, auth.isLogin,userController.downloadInvoice)
-user_route.get('/invoice',userController.invoice)
+// user_route.get('/downloadInvoice',auth.blockCheck, auth.isLogin,userController.downloadInvoice)
+// user_route.get('/invoice',userController.invoice)
 
 
 // user_route.get('/addToPayment',auth.isLogin,userController.addToPayment)
