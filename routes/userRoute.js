@@ -32,7 +32,9 @@ user_route.get('/userAddress',auth.isLogin,userController.userAddress)
 user_route.post('/saveAddress',auth.isLogin,userController.saveAddress)
 user_route.get('/userOrderDetail',auth.isLogin,userController.userOrderDetails)
 user_route.get('/userOrderfullDetail',auth.isLogin,userController.userOrderfullDetails)
+user_route.get('/walletHistory',auth.isLogin,userController.walletHistory)
 user_route.get('/cancellOrder',auth.isLogin,userController.cancellOrder)
+user_route.get('/returnOrder',auth.isLogin,userController.returnOrder)
 user_route.get('/contact',userController.loadContact)
 
 

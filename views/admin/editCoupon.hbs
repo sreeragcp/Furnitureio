@@ -177,7 +177,7 @@
                 <div class="row g-4">
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">Edit Coupon</h6>
+                            <h6 class="mb-4">Edit Coupon</h6><span><h5 style="color: red;" >{{message}}</h5></span>
                             <form action="/admin/editCoupon" method="post" >
                                 <div class="mb-3">
                                     {{!-- <label for="exampleInputEmail1" class="form-label">Name</label> --}}
@@ -190,16 +190,16 @@
                                     </style>
 
                                     <label for="couponCode">Coupon Code</label>
-                                    <input  type="text" class="form-control" placeholder="{{couponData.code}}" name="couponCode">
+                                    <input  type="text" class="form-control" value="{{couponData.code}}" name="couponCode">
                                     <br>
                                     <label for="couponDiscount">Coupon Discount</label>
-                                    <input  type="number" class="form-control" placeholder="{{couponData.discount}}" name="couponDiscount" id="couponDiscount" >
+                                    <input  type="number" class="form-control" value="{{couponData.discount}}" name="couponDiscount" id="couponDiscount" >
                                     <br>
                                     <label for="couponAmount">Coupon Amount</label>
-                                    <input  type="number" class="form-control" placeholder="{{couponData.maxAmount}}" name="couponAmount" id="couponAmount">
+                                    <input  type="number" class="form-control" value="{{couponData.maxAmount}}" name="couponAmount" id="couponAmount">
                                     <br>
                                     <label for="couponDate">Coupon Date</label>
-                                    <input type="date" class="form-control" placeholder="{{couponData.expiryDate}}" name="couponDate" id="couponDate">
+                                    <input type="date" class="form-control" value="{{couponData.expiryDate}}" name="couponDate" id="couponDate">
                                     <input type="text" hidden value="{{couponData._id}}" name="id">
                                 </div>
 
@@ -220,7 +220,7 @@
 
 
             <!-- Footer Start -->
-            <div class="container-fluid pt-4 px-4">
+            {{!-- <div class="container-fluid pt-4 px-4">
                 <div class="bg-light rounded-top p-4">
                     <div class="row">
                         <div class="col-12 col-sm-6 text-center text-sm-start">
@@ -228,7 +228,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <!-- Footer End -->
         </div>
         <!-- Content End -->

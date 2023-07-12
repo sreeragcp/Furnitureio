@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Obaju : e-commerce template</title>
@@ -25,7 +26,7 @@
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-            <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet">
 
     <!-- libs CSS -->
     <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap.min.css">
@@ -43,8 +44,9 @@
 
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link rel="stylesheet" type="text/css" href="/css/reponsive.css">
-  </head>
-  <body>
+</head>
+
+<body>
     <!-- navbar-->
     <header>
         <!-- header left mobie -->
@@ -227,8 +229,7 @@
                                         </a>
                                     </div>
                                     <div>
-                                        <a class="check-out" href="/checkOut" rel="nofollow"
-                                            title="Checkout">
+                                        <a class="check-out" href="/checkOut" rel="nofollow" title="Checkout">
                                             <i class="fa fa-check" aria-hidden="true"></i>
                                             <span>Checkout</span>
                                         </a>
@@ -340,184 +341,201 @@
         </div>
     </header>
     <div id="content">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <nav class="breadcrumb-bg">
-                            <div class="container no-index">
-                                <div style="margin-top: 112px;" class="breadcrumb">
-                                    <ol>
-                                        <li>
-                                            <a href="#">
-                                                <span>Home</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <span>Living Room</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <span>Sofa</span>
-                                            </a>
-                                        </li>
-                                    </ol>
-                                </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="breadcrumb-bg">
+                        <div class="container no-index">
+                            <div style="margin-top: 112px;" class="breadcrumb">
+                                <ol>
+                                    <li>
+                                        <a href="#">
+                                            <span>Home</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span>Living Room</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span>Sofa</span>
+                                        </a>
+                                    </li>
+                                </ol>
                             </div>
-                        </nav>
-          </div>
-          <div id="checkout" class="col-lg-12">
-            <div style="margin-top: -2px;" class="box">
-              {{!-- <form method="get" action=""> --}}
-                <h1>Checkout - Address</h1>
-                <div class="nav flex-column flex-md-row nav-pills text-center"><a href=""
-                    class="nav-link flex-sm-fill text-sm-center active"> <i class="fa fa-map-marker"> </i>Address</a><a
-                    href="paymentMethod" class="nav-link flex-sm-fill text-sm-center disabled"> <i class="fa fa-money">
-                    </i>Payment
-                    Method</a><a href="orderReview" class="nav-link flex-sm-fill text-sm-center disabled"> <i
-                      class="fa fa-eye">
-                    </i>Order Review</a></div>
-                    {{#each addressData}}
-                <div class="row">
-                  
-                  <div class="col-md-6">
-                    <div class="box">
-                      <div align="end">
-                        <a href="editAddress?addressId={{this._id}}"> <label class="badge badge-warning">Edit
-                            Address</label></a>
-                              <a href="deleteAddress?addressId={{this._id}}" onclick="return confirmDelete()"> <label class="badge badge-danger">Delete Address
-                            </label></a>
-                      </div>
-                       
-                      
-                   
-                      <h4>{{this.name}}</h4>
-                      <p>{{this.mobile}}</p>
-                      <h5 id="addressId" value="{{this._id}}"><b>Address:</b> {{this.address}}</h5>
-                      <h5><b>LandMark:</b> {{this.landmark}}</h5>
-                      <h5><b>City:</b> {{this.city}}</h5>
-                      <div class="box-footer text-center">
-                        
-                        <input type="radio"id="selectedAddress" value="{{this._id}}" name="selectedAddress">
-                      </div>
+                        </div>
+                    </nav>
+                </div>
+                <div id="checkout" class="col-lg-12">
+                    <div style="margin-top: -2px;" class="box">
+                        {{!-- <form method="get" action=""> --}}
+                            <h1>Checkout - Address</h1>
+                            <div class="nav flex-column flex-md-row nav-pills text-center"><a href=""
+                                    class="nav-link flex-sm-fill text-sm-center active"> <i class="fa fa-map-marker">
+                                    </i>Address</a><a href="paymentMethod"
+                                    class="nav-link flex-sm-fill text-sm-center disabled"> <i class="fa fa-money">
+                                    </i>Payment
+                                    Method</a><a href="orderReview"
+                                    class="nav-link flex-sm-fill text-sm-center disabled"> <i class="fa fa-eye">
+                                    </i>Order Review</a></div>
+                            {{#each addressData}}
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <div class="box">
+                                        <div align="end">
+                                            <a href="editAddress?addressId={{this._id}}"> <label
+                                                    class="badge badge-warning">Edit
+                                                    Address</label></a>
+                                            {{!-- <a href="deleteAddress?addressId={{this._id}}"> <label
+                                                    class="badge badge-danger">Delete Address --}}
+
+                                                    {{!-- </label></a> --}}
+                                            <button onclick="deleteAddress('{{this._id}}')">Delete</button>
+                                        </div>
+
+
+
+                                        <h4>{{this.name}}</h4>
+                                        <p>{{this.mobile}}</p>
+                                        <h5 id="addressId" value="{{this._id}}"><b>Address:</b> {{this.address}}</h5>
+                                        <h5><b>LandMark:</b> {{this.landmark}}</h5>
+                                        <h5><b>City:</b> {{this.city}}</h5>
+                                        <div class="box-footer text-center">
+
+                                            <input type="radio" id="selectedAddress" value="{{this._id}}"
+                                                name="selectedAddress">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            {{/each}}
+                            <div class="box-footer d-flex justify-content-center">
+
+                                <a href="addAddress" class="btn btn-outline-secondary"><i class="fa fa-add"></i>+ Add
+                                    New Address</a>
+                            </div>
+                            <div class="box-footer d-flex justify-content-between">
+                                <a href="cart" class="btn btn-outline-secondary"><i class="fa fa-chevron-left"></i>Back
+                                    to Basket</a>
+                                <button onclick="toPayment()" class="btn btn-primary">Continue to Payment Method<i
+                                        class="fa fa-chevron-right"></i></button>
+                            </div>c
+                            {{!--
+                        </form> --}}
                     </div>
-                  </div>
-                 
+                    <!-- /.box-->
                 </div>
-                 {{/each}}
-                <div class="box-footer d-flex justify-content-center">
+                <!-- /.col-lg-9-->
 
-                  <a href="addAddress" class="btn btn-outline-secondary"><i class="fa fa-add"></i>+ Add New Address</a>
-                </div>
-                <div class="box-footer d-flex justify-content-between">
-                  <a href="cart" class="btn btn-outline-secondary"><i class="fa fa-chevron-left"></i>Back to Basket</a>
-                  <button  onclick="toPayment()" class="btn btn-primary">Continue to Payment Method<i
-                      class="fa fa-chevron-right"></i></button>
-                </div>c
-              {{!-- </form> --}}
+                <!-- /.col-lg-3-->
             </div>
-            <!-- /.box-->
-          </div>
-          <!-- /.col-lg-9-->
-
-          <!-- /.col-lg-3-->
         </div>
-      </div>
     </div>
-  </div>
-            <!-- /.col-lg-3-->
-          </div>
-        </div>
-      </div>
+    </div>
+    <!-- /.col-lg-3-->
+    </div>
+    </div>
+    </div>
     </div>
     <!--
     *** FOOTER ***
     _________________________________________________________
     -->
     {{!-- <div id="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-6">
-            <h4 class="mb-3">Pages</h4>
-            <ul class="list-unstyled">
-              <li><a href="text.html">About us</a></li>
-              <li><a href="text.html">Terms and conditions</a></li>
-              <li><a href="faq.html">FAQ</a></li>
-              <li><a href="contact.html">Contact us</a></li>
-            </ul>
-            <hr>
-            <h4 class="mb-3">User section</h4>
-            <ul class="list-unstyled">
-              <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
-              <li><a href="register.html">Regiter</a></li>
-            </ul>
-          </div>
-          <!-- /.col-lg-3-->
-          <div class="col-lg-3 col-md-6">
-            <h4 class="mb-3">Top categories</h4>
-            <h5>Men</h5>
-            <ul class="list-unstyled">
-              <li><a href="category.html">T-shirts</a></li>
-              <li><a href="category.html">Shirts</a></li>
-              <li><a href="category.html">Accessories</a></li>
-            </ul>
-            <h5>Ladies</h5>
-            <ul class="list-unstyled">
-              <li><a href="category.html">T-shirts</a></li>
-              <li><a href="category.html">Skirts</a></li>
-              <li><a href="category.html">Pants</a></li>
-              <li><a href="category.html">Accessories</a></li>
-            </ul>
-          </div>
-          <!-- /.col-lg-3-->
-          <div class="col-lg-3 col-md-6">
-            <h4 class="mb-3">Where to find us</h4>
-            <p><strong>Obaju Ltd.</strong><br>13/25 New Avenue<br>New Heaven<br>45Y 73J<br>England<br><strong>Great Britain</strong></p><a href="contact.html">Go to contact page</a>
-            <hr class="d-block d-md-none">
-          </div>
-          <!-- /.col-lg-3-->
-          <div class="col-lg-3 col-md-6">
-            <h4 class="mb-3">Get the news</h4>
-            <p class="text-muted">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-            <form>
-              <div class="input-group">
-                <input type="text" class="form-control"><span class="input-group-append">
-                  <button type="button" class="btn btn-outline-secondary">Subscribe!</button></span>
-              </div>
-              <!-- /input-group-->
-            </form>
-            <hr>
-            <h4 class="mb-3">Stay in touch</h4>
-            <p class="social"><a href="#" class="facebook external"><i class="fa fa-facebook"></i></a><a href="#" class="twitter external"><i class="fa fa-twitter"></i></a><a href="#" class="instagram external"><i class="fa fa-instagram"></i></a><a href="#" class="gplus external"><i class="fa fa-google-plus"></i></a><a href="#" class="email external"><i class="fa fa-envelope"></i></a></p>
-          </div>
-          <!-- /.col-lg-3-->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="mb-3">Pages</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="text.html">About us</a></li>
+                        <li><a href="text.html">Terms and conditions</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact us</a></li>
+                    </ul>
+                    <hr>
+                    <h4 class="mb-3">User section</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
+                        <li><a href="register.html">Regiter</a></li>
+                    </ul>
+                </div>
+                <!-- /.col-lg-3-->
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="mb-3">Top categories</h4>
+                    <h5>Men</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="category.html">T-shirts</a></li>
+                        <li><a href="category.html">Shirts</a></li>
+                        <li><a href="category.html">Accessories</a></li>
+                    </ul>
+                    <h5>Ladies</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="category.html">T-shirts</a></li>
+                        <li><a href="category.html">Skirts</a></li>
+                        <li><a href="category.html">Pants</a></li>
+                        <li><a href="category.html">Accessories</a></li>
+                    </ul>
+                </div>
+                <!-- /.col-lg-3-->
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="mb-3">Where to find us</h4>
+                    <p><strong>Obaju Ltd.</strong><br>13/25 New Avenue<br>New Heaven<br>45Y
+                        73J<br>England<br><strong>Great Britain</strong></p><a href="contact.html">Go to contact
+                        page</a>
+                    <hr class="d-block d-md-none">
+                </div>
+                <!-- /.col-lg-3-->
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="mb-3">Get the news</h4>
+                    <p class="text-muted">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+                        turpis egestas.</p>
+                    <form>
+                        <div class="input-group">
+                            <input type="text" class="form-control"><span class="input-group-append">
+                                <button type="button" class="btn btn-outline-secondary">Subscribe!</button></span>
+                        </div>
+                        <!-- /input-group-->
+                    </form>
+                    <hr>
+                    <h4 class="mb-3">Stay in touch</h4>
+                    <p class="social"><a href="#" class="facebook external"><i class="fa fa-facebook"></i></a><a
+                            href="#" class="twitter external"><i class="fa fa-twitter"></i></a><a href="#"
+                            class="instagram external"><i class="fa fa-instagram"></i></a><a href="#"
+                            class="gplus external"><i class="fa fa-google-plus"></i></a><a href="#"
+                            class="email external"><i class="fa fa-envelope"></i></a></p>
+                </div>
+                <!-- /.col-lg-3-->
+            </div>
+            <!-- /.row-->
         </div>
-        <!-- /.row-->
-      </div>
-      <!-- /.container-->
+        <!-- /.container-->
     </div> --}}
     <!-- /#footer-->
     <!-- *** FOOTER END ***-->
-    
-    
+
+
     <!--
     *** COPYRIGHT ***
     _________________________________________________________
     -->
     {{!-- <div id="copyright">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 mb-2 mb-lg-0">
-            <p class="text-center text-lg-left">©2019 Your name goes here.</p>
-          </div>
-          <div class="col-lg-6">
-            <p class="text-center text-lg-right">Template design by <a href="https://bootstrapious.com/">Bootstrapious</a>
-              <!-- If you want to remove this backlink, pls purchase an Attribution-free License @ https://bootstrapious.com/p/obaju-e-commerce-template. Big thanks!-->
-            </p>
-          </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-2 mb-lg-0">
+                    <p class="text-center text-lg-left">©2019 Your name goes here.</p>
+                </div>
+                <div class="col-lg-6">
+                    <p class="text-center text-lg-right">Template design by <a
+                            href="https://bootstrapious.com/">Bootstrapious</a>
+                        <!-- If you want to remove this backlink, pls purchase an Attribution-free License @ https://bootstrapious.com/p/obaju-e-commerce-template. Big thanks!-->
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
     </div> --}}
     <!-- *** COPYRIGHT END ***-->
     <!-- JavaScript files-->
@@ -704,7 +722,61 @@
                 </div>
             </div>
         </div>
-    </footer>
+
+
+    </footer> 
+    <script>
+        async function confirmDelete(id) {
+
+            await fetch(`/deleteAddress?id=${id}`, {
+                method: "GET",
+                headers: { "Content-Type": "application/json" },
+
+            })
+                .then((res) => res.json())
+                .then((res) => {
+
+                    if (res.success === true) {
+                        swal("Poof! Your Cart item has been deleted!", {
+                            icon: "success",
+                        });
+                        location.reload()
+                    } else {
+                        swal("Your Cart item is safe!");
+                    }
+                }).catch((error) => {
+                    console.log(error.message)
+                })
+
+        }
+
+        function deleteAddress(id) {
+            try {
+                swal({
+                    title: "Are you sure?",
+                    text: "Once deleted, you will not be able to recover this imaginary file!",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                           confirmDelete(id)
+                        } else {
+                            swal("Your imaginary file is safe!");
+                        }
+                    });
+            }
+            catch (err) {
+                console.log(err)
+            }
+
+
+        }
+
+
+    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
@@ -712,5 +784,6 @@
     <script src="vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.js"></script>
     <script src="js/front.js"></script>
     <script src="/check.js"></script>
-  </body>
+</body>
+
 </html>

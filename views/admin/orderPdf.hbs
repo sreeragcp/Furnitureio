@@ -29,7 +29,8 @@
 
     <!-- Template Stylesheet -->
     <link href="/adminPages/css/style.css" rel="stylesheet">
-    {{!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> --}}
+    {{!--
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> --}}
 
 
 
@@ -55,7 +56,8 @@
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
-                        {{!-- <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;"> --}}
+                        {{!-- <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                        --}}
                         <div
                             class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1">
                         </div>
@@ -66,13 +68,13 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="/admin/home" class="nav-item nav-link"><i
-                            class="fa fa-tachometer-alt me-2"></i>DASHBOARD</a>
-                    <a href="/admin/userList" class="nav-item nav-link active"><i class="fa fa-th me-2"></i>CUSTOMER</a>
+                    <a href="/admin/home" class="nav-item nav-link active "><i
+                            class="fa fa-tachometer-alt me-2 "></i>DASHBOARD</a>
+                    <a href="/admin/userList" class="nav-item nav-link "><i class="fa fa-th me-2"></i>CUSTOMER</a>
                     <a href="/admin/categoryList" class="nav-item nav-link"><i
                             class="fa fa-keyboard me-2"></i>CATEGORY</a>
                     <a href="/admin/productList" class="nav-item nav-link"><i class="fa fa-table me-2"></i>PRODUCTS</a>
-                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>COUPON</a>
+                    <a href="/admin/loadCouponPage" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>COUPON</a>
                 </div>
             </nav>
         </div>
@@ -190,12 +192,14 @@
 
                                         <input name="fromdate"
                                             style="margin-left: 10px;border: 1px solid black; max-width:10em ;"
-                                            type="date" id="form3Examplea2" class="form-control me-2" required />
+                                            type="date" id="start-date" min="" max="" class="form-control me-2"
+                                            required />
                                         <h6 style="margin-left: 10px;" class="align-self-center">to</h6>
 
                                         <input name="todate"
                                             style="margin-left: 10px;border: 1px solid black; max-width:10em;"
-                                            type="date" id="form3Examplea2" class="form-control ms-2 me-3" required />
+                                            type="date" id="end-date" min="" max="" class="form-control ms-2 me-3"
+                                            required />
 
                                         <a style="margin-left: 10px;" class="btn btn-outline-primary"
                                             onclick="getorders()">Get
@@ -253,7 +257,7 @@
                                     </tr>
                                 </thead>
                                 <tbody class="d-flex flex-column gap-2 mt-4 rowClassParent">
-                                   
+
                                     <tr class=" row-fluid d-flex justify-content-between border rowClass">
                                         <td class="col-1  ms-3 p-3 d-flex align-items-center"
                                             style="border-right: 1px solid rgb(231, 231, 231);"></td>
@@ -268,8 +272,8 @@
                                         <td class="col d-flex align-items-center  justify-content-center"
                                             style="border-right: 1px solid rgb(231, 231, 231);"></td>
                                     </tr>
-                                    
-                    
+
+
                                 </tbody>
                             </table>
                         </div>
@@ -280,7 +284,7 @@
 
 
             <!-- Footer Start -->
-            <div class="container-fluid pt-4 px-4">
+            {{!-- <div class="container-fluid pt-4 px-4">
                 <div class="bg-light rounded-top p-4">
                     <div class="row">
                         <div class="col-12 col-sm-6 text-center text-sm-start">
@@ -292,7 +296,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <!-- Footer End -->
         </div>
         <!-- Content End -->
@@ -311,6 +315,40 @@
     <script src="/js/report.js"></script>
 
     <script>
+
+
+
+        const startDateInput = document.getElementById("start-date");
+        const endDateInput = document.getElementById("end-date");
+
+        const today = new Date().toISOString().split('T')[0];
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate());
+        const maxDate = tomorrow.toISOString().split('T')[0];
+
+        if (startDateInput && endDateInput) {
+            startDateInput.setAttribute("max", maxDate);
+            endDateInput.setAttribute("min", startDateInput.value);
+            endDateInput.setAttribute("max", maxDate);
+        }
+
+        var startDateField = document.getElementById("start-date");
+        var endDateField = document.getElementById("end-date");
+
+        if (startDateField && endDateField) {
+            startDateField.addEventListener("change", function () {
+                endDateField.setAttribute("min", startDateField.value);
+            });
+
+            endDateField.addEventListener("change", function () {
+                startDateField.setAttribute("max", endDateField.value);
+            });
+
+        }
+
+
+
+
 
 
         const rowClass = document.querySelectorAll('.rowClass')
@@ -341,7 +379,7 @@
                 row.innerHTML = ''
             })
             const data = await response.json()
-            
+
             console.log(data)
 
             console.log('before extract data.orderDAta')
@@ -349,7 +387,7 @@
             console.log('here im now')
             console.log(orderdata)
             let total = 0;
-            orderdata.forEach((order,index) => {
+            orderdata.forEach((order, index) => {
                 const date = new Date(order.date);
                 const formattedDate = new Intl.DateTimeFormat('en-IN', {
                     day: '2-digit',
@@ -363,11 +401,11 @@
                 total += order.total;
                 const totalElement = document.getElementById('total');
 
-                if(totalElement){
-                            totalElement.textContent = `₹${total}`
-               
+                if (totalElement) {
+                    totalElement.textContent = `₹${total}`
+
                     rowClassParent.innerHTML +=
-                    ` <tr class=" row-fluid d-flex justify-content-between border rowClass">
+                        ` <tr class=" row-fluid d-flex justify-content-between border rowClass">
                                         <td class="col-1  ms-3 p-3 d-flex align-items-center"
                                             style="border-right: 1px solid rgb(231, 231, 231);"> ${index + 1}</td>
                                         <td class="col  d-flex align-items-center justify-content-center"
@@ -383,7 +421,7 @@
                                             </td>
                                     </tr>`
                 }
-               
+
             })
         }
 

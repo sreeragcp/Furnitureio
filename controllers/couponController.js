@@ -132,34 +132,66 @@ const editCoupon = async(req,res)=>{
         const couponDate = req.body.couponDate
         const couponId =req.body.id
 
-        console.log(req.body,134);
         const couponCodeUpperCase = couponCode.toUpperCase();
-        console.log(couponCodeUpperCase,136);
       
         const couponExist = await Coupon.findOne({ code: couponCodeUpperCase });
-
-        console.log(couponExist,140);
-        if(!couponExist){  
-                         
+        let newCode;
+        let newDiscount;
+        let newMaxAmount;
+        let newDate;
+        if(!couponExist){
+             let existCoupon = await Coupon.find({ code: couponCodeUpperCase })  ;
+             if(couponCode){
+                if(existCoupon.code == couponCode){
+                    newCode =  existCoupon.code
+                } 
+                else{
+                    newCode = couponCode  
+                }
+             } 
+             if(couponDiscount){
+                if(existCoupon.discount == couponDiscount){
+                    newDiscount =  existCoupon.discount
+                } 
+                else{
+                    newDiscount = couponDiscount  
+                }
+             } 
+             if(couponAmount){
+                if(existCoupon.maxAmount == couponAmount){
+                    newMaxAmount = existCoupon.maxAmount
+                } 
+                else{
+                    newMaxAmount = couponAmount
+                }
+             } 
+             if(couponDate){
+                if(existCoupon.expiryDate == couponDate){
+                    newDate = existCoupon.expiryDate
+                } 
+                else{
+                    newDate = couponDate
+                }
+             }     
             await Coupon.findByIdAndUpdate(
                couponId,
                 {
                     $set: {
-                        code:couponCode,
-                        discount: couponDiscount,
-                        maxAmount: couponAmount,
-                        expiryDate: couponDate
+                        code:newCode,
+                        discount: newDiscount,
+                        maxAmount: newMaxAmount,
+                        expiryDate: newDate
                     }
                 },
     
             );
             
              res.redirect("/admin/loadCouponPage");
-
-        }
-        else{
-            res.render("editCoupon",{ message:"coupon exists" });
-        }
+            }
+            else{
+                res.render('editCoupon',{message:"Coupon Already Exist"})
+            }
+       
         
     } catch (error) {
         

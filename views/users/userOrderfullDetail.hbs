@@ -191,13 +191,13 @@
                                         
                                         <div class="d-flex justify-content-center mb-5">
                                              {{#if (or (eq orderDatas.status 'pending') (eq orderDatas.status 'Shipped'))}}
-                                            <a href="/cancel-order?id=ORDER_ID"
+                                            <a href="/cancellOrder?id={{orderDatas._id}}"
                                                 class="text-white btn btn-danger text-decoration-none"
                                                 data-bs-toggle="modal"
                                                 data-bs-target="#exampleModalORDER_ID"><strong>Cancel Order</strong></a>
                                                 {{/if}}
                                                  {{#if (eq orderDatas.status 'Delivered')}}
-                                                 <a href="/cancel-order?id=ORDER_ID"
+                                                 <a href="/returnOrder?id={{orderDatas._id}}"
                                                 class="text-white btn btn-danger text-decoration-none"
                                                 data-bs-toggle="modal"
                                                 data-bs-target="#exampleModalORDER_ID"><strong>Return Order</strong></a>

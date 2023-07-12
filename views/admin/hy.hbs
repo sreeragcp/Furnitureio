@@ -1,254 +1,285 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-        <link href="img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="/adminPages/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="/adminPages/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="/adminPages/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="/adminPages/css/style.css" rel="stylesheet">
-</head>
-<body>
-   
-    <div class="container-xxl position-relative bg-white d-flex p-0">
-        <!-- Spinner Start -->
-        <div id="spinner"
-            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div>
-        <!-- Spinner End -->
+<%-include(".. /layout/header.ejs")%>
+    <%if(typeof userData !='undefined' ){%>
+        <%-include(".. /layout/menuUser.ejs")%>
+            <%}else{%>
+                <%-include(".. /layout/menu.ejs")%>
+                    <%}%>
 
 
-        <!-- Sidebar Start -->
-        <div class="sidebar pe-4 pb-3">
-            <nav class="navbar bg-light navbar-light">
-                <a href="index.html" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>FURNITUREIO</h3>
-                </a>
-                <div class="d-flex align-items-center ms-4 mb-4">
-                    <div class="position-relative">
-                        <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                        <div
-                            class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1">
-                        </div>
-                    </div>
-                    <div class="ms-3">
-                        <h6 class="mb-0">Sreerag C P</h6>
-                        <span>Admin</span>
-                    </div>
-                </div>
-                <div class="navbar-nav w-100">
-                    <a href="/admin/home" class="nav-item nav-link"><i
-                            class="fa fa-tachometer-alt me-2"></i>DASHBOARD</a>
-                    <a href="w" class="nav-item nav-link"><i class="fa fa-th me-2"></i>CUSTOMER</a>
-                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>CATEGORY</a>
-                    <a href="/admin/productList" class="nav-item nav-link"><i class="fa fa-table me-2"></i>PRODUCTS</a>
-                    <a href="chart.html" class="nav-item nav-link active"><i class="fa fa-chart-bar me-2"></i>COUPEN</a>
-                </div>
-            </nav>
-        </div>
-        <!-- Sidebar End -->
+                        <!-- Start BreadCrumb -->
+                        <nav aria-label="breadcrumb" class="breadcrumb-nav mb-2">
+                            <div class="container">
+                                <!--  <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">Shop</a></li>
+                        <li class="breadcrumb-item"><a href="#">No Sidebar</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Boxed</li>
+                    </ol>-->
+                            </div>
 
 
-        <!-- Content Start -->
-        <div class="content">
-            <!-- Navbar Start -->
-            <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
-                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
-                    <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
-                </a>
-                <a href="#" class="sidebar-toggler flex-shrink-0">
-                    <i class="fa fa-bars"></i>
-                </a>
-                <form class="d-none d-md-flex ms-4">
-                    <input class="form-control border-0" type="search" placeholder="Search">
-                </form>
-                <div class="navbar-nav align-items-center ms-auto">
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fa fa-envelope me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Message</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/user.jpg" alt=""
-                                        style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
+
+                            <div class="page-content">
+                                <div class="container">
+                                    <div class="toolbox">
+                                        <div class="toolbox-left">
+                                            <a href="#" class="sidebar-toggler"><i class="icon-bars"></i>Filters</a>
+                                        </div>
+
+
+
+
+                                        <div class="searchBox text-center m-3">
+
+                                            <input type="text" id="searchData" placeholder="Search..."
+                                                style="font-size: 2rem;height: 4rem;" name="search">
+                                            <button class="btn btn-primary" onclick="searchProducts()">Search</button>
+                                            <!-- <input type="submit" value="Search"  class="btn btn-secondary"> -->
+
+                                        </div>
+
+
+                                        <div class="toolbox-right">
+                                            <div class="toolbox-sort">
+                                                <label for="sortby">Sort by:</label>
+                                                <div class="select-custom">
+                                                    <select name="sortby" id="sortby" class="form-control"
+                                                        onchange="handleSort(this)">
+                                                        <option value="new" <%=sort=="new" ? "selected" : "" %> >New
+                                                            arrivals</option>
+                                                        <option value="price-l-h" <%=sort==="price-l-h" ? "selected"
+                                                            : "" %>>Price low to high</option>
+                                                        <option value="price-h-l" <%=sort==="price-h-l" ? "selected"
+                                                            : "" %>>Price high to low</option>
+
+                                                    </select>
+                                                </div>
+                                            </div><!-- End .toolbox-sort -->
+                                        </div><!-- End .toolbox-right -->
+                                    </div><!-- End .toolbox -->
+
+
+
+
+                                    <div class="products">
+
+
+                                        <div class="row ">
+
+
+
+                                            <!-- ==================start product =============== -->
+
+
+                                            <%if(typeof productData !='undefined' ){productData.map((item)=>{%>
+                                                <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3">
+                                                    <div class="product">
+
+                                                        <figure class="product-media">
+                                                            <!-- <span class="product-label label-sale">30% off</span> -->
+                                                            <div class="image-card bg-primary "
+                                                                style="width:100% ;height:300px">
+
+                                                                <a href="/product?_id=<%=item._id%>">
+                                                                    <img src="<%= item.mainImage%>" alt="Product image"
+                                                                        style="width:100% ;height:100%"
+                                                                        class="prsoduct-image img-fluid">
+                                                                </a>
+                                                            </div>
+
+                                                            <div class="product-action-vertical">
+                                                                <a href="/add-to-wishlist?_id=<%=item._id%>"
+                                                                    class="btn-product-icon btn-wishlist btn-expandable"><span>add
+                                                                        to wishlist</span></a>
+                                                            </div><!-- End .product-action -->
+
+                                                            <div class="product-action action-icon-top">
+                                                                <a href="/add-to-cart?_id=<%=item._id%>"
+                                                                    class="btn-product btn-cart"><span>add to
+                                                                        cart</span></a>
+                                                                <p>
+                                                                    <%item._id%>
+                                                                </p>
+                                                                <!-- <a href="popup/quickView.html" class="btn-product btn-quickview" title="Quick view"><span>quick view</span></a> -->
+                                                                <!-- <a href="#" class="btn-product btn-compare" title="Compare"><span>compare</span></a> -->
+                                                            </div><!-- End .product-action -->
+                                                        </figure><!-- End .product-media -->
+
+                                                        <div class="product-body">
+                                                            <div class="product-cat">
+                                                                <!-- <a href="#">Women</a> -->
+                                                            </div><!-- End .product-cat -->
+                                                            <h3 class="product-title"><a
+                                                                    href="/product?_id=<%=item._id%>">
+                                                                    <%=item.name%>
+                                                                </a></h3><!-- End .product-title -->
+                                                            <div class="product-price">
+                                                                <span class="new-price"> ₹ <%=item.price%></span>
+                                                                <!-- <span class="old-price">$84.00</span> -->
+                                                            </div><!-- End .col-sm-6 col-lg-4 col-xl-3 -->
+
+                                                            <!-- End .col-sm-6 col-lg-4 col-xl-3 -->
+                                                        </div>
+                                                        <!-- <span class="old-price">$84.00</span>    -->
+                                                    </div><!-- End .product-price -->
+                                                    <!-- End .product-nav -->
+                                                </div><!-- End .product-body -->
+                                                <!-- End .col-sm-6 col-lg-4 col-xl-3 -->
+
+                                                <!-- End .col-sm-6 col-lg-4 col-xl-3 -->
+
+
+                                                <%})}else{%>
+                                                    <p>No data Found</p>
+                                                    <%}%>
+                                        </div>
+
                                     </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/user.jpg" alt=""
-                                        style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/user.jpg" alt=""
-                                        style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">See all message</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fa fa-bell me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Notificatin</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Profile updated</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">New user added</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Password changed</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">See all notifications</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <img class="rounded-circle me-lg-2" src="img/user.jpg" alt=""
-                                style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex">John Doe</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">My Profile</a>
-                            <a href="#" class="dropdown-item">Settings</a>
-                            <a href="#" class="dropdown-item">Log Out</a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-            <!-- Navbar End -->
+                                    <!-- ================================End Product ------------->
 
 
-            <!-- Form Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">Edit Coupon</h6>
-                            <form action="/admin/editCoupon" method="post" enctype="multipart/form-data" id="editCoupon">
-                                <div class="mb-3">
-                                    {{!-- <label for="exampleInputEmail1" class="form-label">Name</label> --}}
-                                    <style>
-                                        .category-message {
-                                            color: red;
-                                            font-weight: bold;
-                                            font-size: 16px;
+
+
+                                    <!-- <div class="load-more-container text-center">
+                            <a href="#" class="btn btn-outline-darker btn-load-more">More Products <i class="icon-refresh"></i></a>
+                        </div>
+                    </div> -->
+
+                                    <div class="sidebar-filter-overlay"></div>
+                                    <aside class="sidebar-shop sidebar-filter">
+                                        <div class="sidebar-filter-wrapper">
+                                            <div class="widget widget-clean">
+                                                <label><i class="icon-close"></i>Filters</label>
+                                                <a href="/all-products" class="sidebar-filter-clear">Clean All</a>
+                                            </div><!-- End .widget -->
+                                            <div class="widget widget-collapsible">
+                                                <h3 class="widget-title">
+                                                    <a data-toggle="collapse" href="#widget-1" role="button"
+                                                        aria-expanded="true" aria-controls="widget-1">
+                                                        Category
+                                                    </a>
+                                                </h3><!-- End .widget-title -->
+
+                                                <div class="collapse show" id="widget-1">
+                                                    <div class="widget-body">
+                                                        <div class="filter-items filter-items-count">
+
+                                                            <div class="input-category">
+                                                                <% categoryDetails.map(item=>{%>
+                                                                    <div class="category-item">
+                                                                        <!-- <a href="/all-products?cat=<%=item._id%>"><%=item.category%> </a> -->
+
+                                                                        <a href="#"
+                                                                            onclick="handleCat('<%=item._id%>')">
+                                                                            <%=item.category%>
+                                                                        </a>
+
+                                                                    </div>
+
+                                                                    <% })%>
+                                                            </div>
+
+                                                        </div><!-- End .filter-items -->
+                                                    </div><!-- End .widget-body -->
+                                                </div><!-- End .collapse -->
+                                            </div><!-- End .widget -->
+
+
+
+
+                                            <!-- End .widget -->
+                                        </div><!-- End .sidebar-filter-wrapper -->
+                                    </aside><!-- End .sidebar-filter -->
+
+
+                                    <div class="pagination-block my-4">
+                                        <nav aria-label="Page navigation example ">
+                                            <ul class="pagination d-flex justify-content-center"
+                                                onclick="handlePage(event,'<%=page%>','<%=totalPages%>')">
+                                                <li class="page-item <%= page == 1 ? 'disabled' : '' %>"><a
+                                                        class="page-link" href="#">Previous</a></li>
+                                                <% for(let i=1;i<=totalPages;i++){%>
+                                                    <li class="page-item <%= page == i ? 'active' : '' %>"><a
+                                                            class="page-link" id="currentPage" href="#">
+                                                            <%=i%>
+                                                        </a></li>
+                                                    <% }%>
+
+                                                        <li
+                                                            class="page-item <%= page == totalPages ? 'disabled' : '' %>">
+                                                            <a class="page-link" href="#">Next</a></li>
+
+                                            </ul>
+                                        </nav>
+                                    </div>
+
+                                </div><!-- End .container -->
+                            </div>
+
+
+
+                            <script>
+
+
+                                const handleSort = (option) => {
+                                    const selectedValue = option.value;
+                                    console.log('Selected value:', option.value);
+                                    const url = new URL(window.location.href);
+                                    url.searchParams.set('sort', selectedValue);
+                                    window.location.href = url.toString();
+                                }
+
+
+                                const handlePage = (event, currentPage, totalPages) => {
+                                    let pageNumber = event.target.innerText;
+                                    console.log("Page ", currentPage);
+                                    if (pageNumber == "Previous") {
+                                        if (currentPage == '1') {
+                                            pageNumber = parseInt(currentPage);
+                                        } else {
+                                            pageNumber = parseInt(currentPage) - 1;
                                         }
-                                    </style>
+                                    }
+                                    else if (pageNumber == "Next") {
+                                        if (currentPage == totalPages) {
+                                            pageNumber = parseInt(totalPages);
+                                        } else {
+                                            pageNumber = parseInt(currentPage) + 1;
+                                        }
+                                    }
+                                    console.log("Page num", pageNumber);
 
-                                    <label for="couponCode">Coupon Code</label>
-                                    <input  type="text" class="form-control" placeholder="{{couponData.code}}" name="couponCode">
-                                    <br>
-                                    <label for="couponDiscount">Coupon Discount</label>
-                                    <input  type="number" class="form-control" placeholder="{{couponData.discount}}" name="couponDiscount" id="couponDiscount" >
-                                    <br>
-                                    <label for="couponAmount">Coupon Amount</label>
-                                    <input  type="number" class="form-control" placeholder="{{couponData.maxAmount}}" name="couponAmount" id="couponAmount">
-                                    <br>
-                                    <label for="couponDate">Coupon Date</label>
-                                    <input type="date" class="form-control" placeholder="{{couponData.expiryDate}}" name="couponDate" id="couponDate">
-                                </div>
+                                    const url = new URL(window.location.href);
+                                    url.searchParams.set('page', pageNumber);
+                                    window.location.href = url.toString();
 
-                                <div class="mb-3">
-                                    {{!-- <label for="formFile" class="form-label">Default file input example</label>
-                                    --}}
-                                    {{!-- <input class="form-control" name="image" type="file" accept=".jpg, .png, .gif"
-                                        required> --}}
-                                </div>
-                                <button id="submitButton" name="submitButton" type="submit" class="btn btn-primary"
-                                >Submit</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Form End -->
+                                }
 
+                                const handleCat = (catId) => {
 
-            <!-- Footer Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-light rounded-top p-4">
-                    <div class="row">
-                        <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="#">Your Site Name</a>, All Right Reserved.
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Footer End -->
-        </div>
-        <!-- Content End -->
+                                    console.log("cat", catId);
+                                    const url = new URL(window.location.href);
+                                    url.searchParams.set('cat', catId);
+                                    window.location.href = url.toString();
+                                }
+
+                                const searchProducts = () => {
+                                    const searchData = document.getElementById("searchData").value;
+                                    const url = new URL(window.location.href);
+                                    url.searchParams.set('search', searchData);
+                                    window.location.href = url.toString();
+                                }
 
 
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-    </div>
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.7/dist/sweetalert2.min.js"></script>
-    <script>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/adminPages/lib/chart/chart.min.js"></script>
-    <script src="/adminPages/lib/easing/easing.min.js"></script>
-    <script src="/adminPages/lib/waypoints/waypoints.min.js"></script>
-    <script src="/adminPages/lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="/adminPages/lib/tempusdominus/js/moment.min.js"></script>
-    <script src="/adminPages/lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="/adminPages/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
-    <!-- Template Javascript -->
-    <script src="/adminPages/js/main.js"></script>
-    <script src="/categoryValidation.js"></script>
 
-    
-</body>
-</html>
+                            </script>
+
+
+
+
+
+
+
+                            <%-include(".. /layout/footer.ejs")%>

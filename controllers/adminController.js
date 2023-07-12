@@ -84,7 +84,7 @@ const loadUserList = async (req, res) => {
 const loadCategoryList = async (req, res) => {
     try {
         const categoryList = await Category.find()
-        console.log(categoryList,"this is category list")
+        console.log(categoryList, "this is category list")
         res.render('categories', { cate: categoryList })
     } catch (error) {
         console.log(error.message)
@@ -103,7 +103,7 @@ const loadAddCategory = async (req, res) => {
 const addCategory = async (req, res) => {
     const categoryName = req.body.name
     const image = req.file
-    const uppercase=categoryName.toUpperCase()
+    const uppercase = categoryName.toUpperCase()
     try {
         const categoryExist = await Category.findOne({ category: uppercase })
         if (!categoryExist) {
@@ -112,7 +112,7 @@ const addCategory = async (req, res) => {
             })
         }
         else {
-            res.render('add_category',{message:"Category already Exist"})
+            res.render('add_category', { message: "Category already Exist" })
         }
 
     } catch (error) {
@@ -148,7 +148,7 @@ const loadEditCategory = async (req, res) => {
 //             uploadedImages = files
 //         }
 //         const categoryName = req.body.name
-        
+
 //         await Category.findByIdAndUpdate(
 //             cateId,
 //             {
@@ -157,7 +157,7 @@ const loadEditCategory = async (req, res) => {
 //             }
 //         );
 //         req.session.CategoryUpdate = true;
-        
+
 //         res.redirect('/admin/categoryList')
 
 //     } catch (error) {
@@ -168,38 +168,38 @@ const loadEditCategory = async (req, res) => {
 
 const editCategory = async (req, res) => {
     try {
-      const cateId = req.params.id;
-      const categoryData = await Category.findById(cateId);
-      const existingImage = categoryData.imageUrl;
-      const file = req.file;
-      let uploadedImages;
-      if (file) {
-        uploadedImages = file.filename;
-      } else {
-        uploadedImages = existingImage;
-      }
-  
-      const categoryName = req.body.name;
-  
-      await Category.findByIdAndUpdate(cateId, {
-        category: categoryName,
-        imageUrl: uploadedImages,
-      });
-  
-      req.session.CategoryUpdate = true;
-  
-      res.redirect('/admin/categoryList');
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
-  
+        const cateId = req.params.id;
+        const categoryData = await Category.findById(cateId);
+        const existingImage = categoryData.imageUrl;
+        const file = req.file;
+        let uploadedImages;
+        if (file) {
+            uploadedImages = file.filename;
+        } else {
+            uploadedImages = existingImage;
+        }
 
-const unlistCategory = async(req,res)=>{
+        const categoryName = req.body.name;
+
+        await Category.findByIdAndUpdate(cateId, {
+            category: categoryName,
+            imageUrl: uploadedImages,
+        });
+
+        req.session.CategoryUpdate = true;
+
+        res.redirect('/admin/categoryList');
+    } catch (error) {
+        console.log(error.message);
+    }
+};
+
+
+const unlistCategory = async (req, res) => {
     try {
         const categoryId = req.params.id
-        const blockCategory = await Category.findById(categoryId )
-        await Category.findByIdAndUpdate(categoryId , { $set: { is_Blocked: !blockCategory.is_Blocked } }, { new: true })
+        const blockCategory = await Category.findById(categoryId)
+        await Category.findByIdAndUpdate(categoryId, { $set: { is_Blocked: !blockCategory.is_Blocked } }, { new: true })
         res.redirect('/admin/categoryList')
     } catch (error) {
         console.log(error.message);
@@ -353,9 +353,9 @@ const unlistProduct = async (req, res) => {
 const orderList = async (req, res) => {
     try {
 
-        const orders = await Order.find().sort({date:-1});
+        const orders = await Order.find().sort({ date: -1 });
         let orderData = orders.map((order) => {
-        let formattedDate = moment(order.date).format("MMMM D, YYYY");
+            let formattedDate = moment(order.date).format("MMMM D, YYYY");
 
             return {
                 ...order._doc,
@@ -374,7 +374,7 @@ const orderDetail = async (req, res) => {
         const orderId = req.query.id;
         const orderDatas = await Order.findById(orderId)
         const orderData = await Order.findById(orderId).populate('address');
-        
+
 
         const totalPricePerProduct = orderDatas.product.map(item => ({
             productId: item.id,
@@ -385,32 +385,77 @@ const orderDetail = async (req, res) => {
             productPrice: item.price,
             totalPrice: item.price * item.quantity,
         }));
-        res.render('orderDetail', { totalPricePerProduct,orderData })
+        res.render('orderDetail', { totalPricePerProduct, orderData })
     } catch (error) {
         console.log(error.message);
     }
 }
 
-const changeStatus = async(req,res)=>{
+const changeStatus = async (req, res) => {
     try {
-        const id = req.query.id
-        const status= req.body.status
-        const deliveredDate = new Date()
-        const returnDate = new Date()
-        returnDate.setDate(returnDate.getDate() + 5)
-        if (status == 'Delivered') {
-            const order = await Order.findByIdAndUpdate(
-                id,
-                { $set: { deliveredDate: deliveredDate, returnDate: returnDate } },
+        // const id = req.query.id
+        // const status= req.body.status
+        // const deliveredDate = new Date()
+        // const returnDate = new Date()
+        // returnDate.setDate(returnDate.getDate() + 5)
+        // if (status == 'Delivered') {
+        //     const order = await Order.findByIdAndUpdate(
+        //         id,
+        //         { $set: { deliveredDate: deliveredDate, returnDate: returnDate } },
+        //         { new: true }
+        //     );
+        //     console.log('delivered date and return date are updated')
+        // }
+        // const order = await Order.findByIdAndUpdate(
+        //     id,
+        //     { $set: { status: status } },
+        //     { new: true }
+        // );
+        // res.redirect("/admin/orderList")
+
+
+        const orderId = req.query.id;
+        const status = req.body.status;
+        console.log(orderId, status);
+
+        if (status === "Delivered") {
+            const returnEndDate = new Date();
+            returnEndDate.setDate(returnEndDate.getDate() + 7);
+
+            await Order.findByIdAndUpdate(
+                orderId,
+                {
+                    $set: {
+                        status: status,
+                        deliveredDate: new Date(),
+                        returnEndDate: returnEndDate,
+                    },
+                    $unset: { ExpectedDeliveryDate: "" },
+                },
                 { new: true }
             );
-            console.log('delivered date and return date are updated')
+        } else if (status === "Cancelled") {
+            await Order.findByIdAndUpdate(
+                orderId,
+                {
+                    $set: {
+                        status: status,
+                    },
+                    $unset: { ExpectedDeliveryDate: "" },
+                },
+                { new: true }
+            );
+        } else {
+            await Order.findByIdAndUpdate(
+                orderId,
+                {
+                    $set: {
+                        status: status,
+                    },
+                },
+                { new: true }
+            );
         }
-        const order = await Order.findByIdAndUpdate(
-            id,
-            { $set: { status: status } },
-            { new: true }
-        );
         res.redirect("/admin/orderList")
 
     } catch (error) {

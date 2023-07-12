@@ -192,8 +192,6 @@ const exportPdfDailySales = async (req, res) => {
         const htmlString = fs.readFileSync(filePathName).toString();
 
         const ejsData = ejs.render(htmlString, orderData)
-        // console.log('--------            this is order data-----------')
-        // console.log(orderData)
 
         await createDailySalesPdf(ejsData);
 

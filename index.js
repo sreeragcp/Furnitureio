@@ -45,6 +45,10 @@ hbs.registerHelper('or', function (a, b) {
   return a  ||  b;
 });
 
+hbs.registerHelper('and', function (a, b) {
+  return a && b;
+});
+
 hbs.registerHelper('subtract', function (a, b) {
   return a - b;
 });
@@ -97,6 +101,6 @@ app.use(async function (req, res, next) {
   res.status(404).render("users/404");
 });
 
-app.listen(7000,function(){
-    console.log("server is running...on http://localhost:7000/");
+app.listen(3000,function(){
+    console.log("server is running...on http://localhost:3000/");
 });

@@ -192,13 +192,22 @@
                     <div class="col-sm-5 col-md-5 d-flex align-items-center justify-content-end" id="search_widget">
 
 
-
+                        {{!--
                         <form action="/shopPage" method="get">
 
                             <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
                             <input type="search" name="search" id="q" placeholder="Search"
                                 class="ui-autocomplete-input">
                             <button type="submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </form> --}}
+                        <form action="/shopPage" method="get">
+
+                            <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+                            <input type="text" name="search" id="searchData" placeholder="Search"
+                                class="ui-autocomplete-input">
+                            <button onclick="searchProducts()">
                                 <i class="fa fa-search"></i>
                             </button>
                         </form>
@@ -239,15 +248,13 @@
                                         {{/if}}
                                     </div>
                                     <div>
-                                        <a class="register" href="/register" rel="nofollow"
-                                            title="Register Account">
+                                        <a class="register" href="/register" rel="nofollow" title="Register Account">
                                             <i class="fa fa-user"></i>
                                             <span>Register Account</span>
                                         </a>
                                     </div>
                                     <div>
-                                        <a class="check-out" href="/checkOut" rel="nofollow"
-                                            title="Checkout">
+                                        <a class="check-out" href="/checkOut" rel="nofollow" title="Checkout">
                                             <i class="fa fa-check" aria-hidden="true"></i>
                                             <span>Checkout</span>
                                         </a>
@@ -305,7 +312,7 @@
                             <div class="blockcart block-cart cart-preview tiva-toggle">
                                 <div class="header-cart tiva-toggle-btn">
                                     {{!-- <span class="cart-products-count">1</span> --}}
-                                     <a href="/loadCart"><i  class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                                    <a href="/loadCart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                                 </div>
                                 {{!-- <div class="dropdown-content">
                                     <div class="cart-content">
@@ -408,8 +415,8 @@
                                                         <i class="zmdi zmdi-plus"></i>
                                                     </span>
 
-                                                    <a class="cateItem"
-                                                        href="/shopPage?Category={{this.category._id}}">{{this.category}}</a>
+                                                    <a class="cateItem" href="#"
+                                                        onclick="handleCat('{{this._id}}')">{{this.category}}</a>
 
 
 
@@ -793,9 +800,15 @@
 
                                                         <div class="products-sort-order dropdown">
                                                             <select name="sortby" id="sortOptions"
-                                                                onchange="sortProducts()" class="select-title">
-                                                                <option value="asc">Price, low to high</option>
-                                                                <option value="desc">Price, high to low</option>
+                                                                onchange="handleSort(this)" class="select-title">
+                                                                {{!-- <option value="asc">Price, low to high</option>
+                                                                <option value="desc">Price, high to low</option> --}}
+                                                                <option value="new" {{#if (eq sort "new"
+                                                                    )}}selected{{/if}}>New arrivals</option>
+                                                                <option value="price-l-h" {{#if (eq sort "price-l-h"
+                                                                    )}}selected{{/if}}>Price low to high</option>
+                                                                <option value="price-h-l" {{#if (eq sort "price-h-l"
+                                                                    )}}selected{{/if}}>Price high to low</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -1785,7 +1798,7 @@
                                         </div>
 
                                         <!-- pagination -->
-                                        <div class="pagination">
+                                        {{!-- <div class="pagination">
                                             <div class="js-product-list-top ">
                                                 <div class="d-flex justify-content-around row">
                                                     <div class="showing col col-xs-12">
@@ -1818,7 +1831,28 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div> --}}
+
+                                        <div class="pagination-block my-4">
+                                            <nav aria-label="Page navigation example">
+                                                <ul class="pagination d-flex justify-content-center"onclick="handlePage(event,{{page}},{{totalPages}})" >
+                                                    <li class="page-item {{#if (eq page 1)}}disabled{{/if}}">
+                                                        <a class="page-link" href="#">Previous</a>
+                                                    </li>
+                                                    {{#each pages}}
+                                                    <li class="page-item {{#if (eq page @index)}}active{{/if}}">
+                                                        <a class="page-link" id="currentPage" href="#">
+                                                            {{this}}
+                                                        </a>
+                                                    </li>
+                                                    {{/each}}
+                                                    <li class="page-item {{#if (eq page totalPages)}}disabled{{/if}}">
+                                                        <a class="page-link" href="#">Next</a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
                                         </div>
+
 
                                         <!-- Pagination -->
                                         <!-- shop.hbs -->
@@ -2712,9 +2746,71 @@
         </div>
     </div>
 
+    <script>
 
-    
 
+        const handleSort = (option) => {
+            alert("hy")
+            const selectedValue = option.value;
+            console.log('Selected value:', option.value);
+            const url = new URL(window.location.href);
+            url.searchParams.set('sort', selectedValue);
+            window.location.href = url.toString();
+        }
+
+
+        const handlePage = (event, currentPage, totalPages) => {
+            let pageNumber = event.target.innerText;
+            console.log("Page ", currentPage);
+            if (pageNumber == "Previous") {
+                if (currentPage == '1') {
+                    pageNumber = parseInt(currentPage);
+                } else {
+                    pageNumber = parseInt(currentPage) - 1;
+                }
+            }
+            else if (pageNumber == "Next") {
+                if (currentPage == totalPages) {
+                    pageNumber = parseInt(totalPages);
+                } else {
+                    pageNumber = parseInt(currentPage) + 1;
+                }
+            }
+            console.log("Page num", pageNumber);
+
+            const url = new URL(window.location.href);
+            url.searchParams.set('page', pageNumber);
+            window.location.href = url.toString();
+
+        }
+
+        const handleCat = (catId) => {
+                    
+            console.log("cat", catId);
+            const url = new URL(window.location.href);
+            url.searchParams.set('cat', catId);
+            window.location.href = url.toString();
+        }
+
+        const searchProducts = () => {
+            
+            const searchData = document.getElementById("searchData").value;
+            console.log(searchData,"hhhhhhhhhhhhh")
+            const url = new URL(window.location.href);
+            url.searchParams.set('search',searchData);
+            window.location.href = url.toString();
+        }
+
+
+
+
+
+    </script>
+
+
+
+
+    {{!--
     <script>
         const sortProducts = async () => {
 
@@ -2738,22 +2834,22 @@
         }
 
     </script>
-      
+
     <script>
-    const filteredData = (data) => {
-        productContainer.innerHTML = '';
-        productContainer.innerHTML =
-            `<div class="tab-content product-items">
+        const filteredData = (data) => {
+            productContainer.innerHTML = '';
+            productContainer.innerHTML =
+                `<div class="tab-content product-items">
                 <div id="grid" class="related tab-pane fade in active show">
                     <div class="row" id="productlist"></div>
                 </div>
             </div>`;
 
-        const productList = document.getElementById('productlist');
+            const productList = document.getElementById('productlist');
 
-        data.forEach((product) => {
-            productList.innerHTML +=
-                `<div class="item text-center col-md-4">
+            data.forEach((product) => {
+                productList.innerHTML +=
+                    `<div class="item text-center col-md-4">
                     <div class="product-miniature js-product-miniature item-one first-item">
                         <div class="thumbnail-container border">
                             <a href="product-detail.html">
@@ -2805,9 +2901,9 @@
                         </div>
                     </div>
                 </div>`;
-        });
-    }
-</script>
+            });
+        }
+    </script> --}}
 
 
     <!-- Vendor JS -->
