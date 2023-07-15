@@ -13,9 +13,9 @@
                 </div>
 
                 <!-- logo -->
-                <div class="mobile-logo">
+                <div class="mobile-logo mobile">
                     <a href="index-2.html">
-                        <img class="logo-mobile img-fluid" src="/img/homelogo.png" alt="Prestashop_Furnitica">
+                        <img class="logo-mobile img-fluid" src="/img/homelogo.png" alt="Prestashop_Furnitica" style="width:14rem;height:2rem;mix-blend-mode: darken;">
                     </a>
                 </div>
 
@@ -26,7 +26,7 @@
             </div>
 
             <!-- search -->
-            <div id="mobile_search" class="d-flex">
+            {{!-- <div id="mobile_search" class="d-flex">
                 <div id="mobile_search_content">
                     <form method="get" action="#">
                         <input type="text" name="s" value="" placeholder="Search">
@@ -85,7 +85,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
 
         <!-- header desktop -->
@@ -195,53 +195,13 @@
                                             <span>My Wishlists</span>
                                         </a>
                                     </div>
-                                    {{!-- <div id="desktop_currency_selector"
-                                        class="currency-selector groups-selector hidden-sm-down">
-                                        <ul class="list-inline">
-                                            <li>
-                                                <a title="Euro" rel="nofollow" href="#">EUR</a>
-                                            </li>
-                                            <li class="current list-inline-item">
-                                                <a title="British Pound Sterling" rel="nofollow" href="#">GBP</a>
-                                            </li>
-                                        </ul>
-                                    </div> --}}
-                                    {{!-- <div id="desktop_language_selector"
-                                        class="language-selector groups-selector hidden-sm-down">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item current">
-                                                <a href="#">
-                                                    <img class="img-fluid" src="img/home/home1-flas.jpg" alt="English"
-                                                        width="16" height="11">
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="#">
-                                                    <img class="img-fluid" src="img/home/home1-flas2.jpg" alt="Italiano"
-                                                        width="16" height="11">
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="#">
-                                                    <img class="img-fluid" src="img/home/home1-flas3.jpg" alt="Français"
-                                                        width="16" height="11">
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="#">
-                                                    <img class="img-fluid" src="img/home/home1-flas4.jpg" alt="Español"
-                                                        width="16" height="11">
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div> --}}
                                 </div>
                             </div>
                         </div>
                         <div class="desktop_cart">
                             <div class="blockcart block-cart cart-preview tiva-toggle">
                                 <div class="header-cart tiva-toggle-btn">
-                                    {{!-- <span class="cart-products-count"></span> --}}
+                                 
                                     <a href="/loadCart"><i  class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                                 </div>
 
@@ -3301,11 +3261,11 @@
     </div>
 
     <!-- menu mobie left -->
-    <div class="mobile-top-menu d-md-none">
+    {{!-- <div class="mobile-top-menu d-md-none">
         <button type="button" class="close" aria-label="Close">
             <i class="zmdi zmdi-close"></i>
         </button>
-        <div class="tiva-verticalmenu block" data-count_showmore="17">
+        {{!-- <div class="tiva-verticalmenu block" data-count_showmore="17">
             <div class="box-content block-content">
                 <div class="verticalmenu" role="navigation">
                     <ul class="menu level1">
@@ -3815,8 +3775,8 @@
                     </ul>
                 </div>
             </div>
-        </div>
-    </div>
+        </div> --}}
+    </div> --}}
 
     <!-- menu mobie right -->
     <div id="mobile-pagemenu" class="mobile-boxpage d-flex hidden-md-up active d-md-none">
@@ -3834,29 +3794,10 @@
                                 <span class="arrow collapsed" data-toggle="collapse" data-target="#home1"
                                     aria-expanded="true" role="status">
                                     <i class="zmdi zmdi-minus"></i>
-                                    <i class="zmdi zmdi-plus"></i>
+                                    <a href="/"> <i class="zmdi zmdi-plus"></i></a>
                                 </span>
-                                <a href="index-2.html" title="Home">
+                                <a href="/" title="Home">
                                     <i class="fa fa-home" aria-hidden="true"></i>Home</a>
-                                <div class="subCategory collapse" id="home1" aria-expanded="true" role="status">
-                                    <ul>
-                                        <li class="item">
-                                            <a href="index-2.html" title="Home Page 1">Home Page 1</a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="home2.html" title="Home Page 2">Home Page 2</a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="home3.html" title="Home Page 3">Home Page 3</a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="home4.html" title="Home Page 4">Home Page 4</a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="home5.html" title="Home Page 5">Home Page 5</a>
-                                        </li>
-                                    </ul>
-                                </div>
                             </li>
                             <li class="item has-sub">
                                 <span class="arrow collapsed" data-toggle="collapse" data-target="#blog"
@@ -3865,33 +3806,16 @@
                                     <i class="zmdi zmdi-plus"></i>
                                 </span>
                                 <a href="#" title="Blog">
-                                    <i class="fa fa-address-book" aria-hidden="true"></i>Blog</a>
+                                    <i class="fa fa-cubes"></i>Category</a>
 
                                 <div class="subCategory collapse" id="blog" aria-expanded="true" role="status">
                                     <ul>
+                                         {{#each categoryData}}
                                         <li class="item">
-                                            <a href="blog-list-sidebar-left.html" title="Blog List (Sidebar Left)">Blog
-                                                List (Sidebar Left)</a>
+                                            <a href="/productlist/{{this._id}}">
+                                                {{this.category}}</a>
                                         </li>
-                                        <li class="item">
-                                            <a href="blog-list-sidebar-left2.html"
-                                                title="Blog List (Sidebar Left) 2">Blog List (Sidebar Left) 2</a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="blog-list-sidebar-right.html"
-                                                title="Category Blog (Right column)">Blog List (Sidebar Right)</a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="blog-list-no-sidebar.html" title="Blog List (No Sidebar)">Blog List
-                                                (No Sidebar)</a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="blog-grid-no-sidebar.html" title="Blog Grid (No Sidebar)">Blog Grid
-                                                (No Sidebar)</a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="blog-detail.html" title="Blog Detail">Blog Detail</a>
-                                        </li>
+                                         {{/each}}
                                     </ul>
                                 </div>
                             </li>
@@ -3901,67 +3825,13 @@
                                     <i class="zmdi zmdi-minus"></i>
                                     <i class="zmdi zmdi-plus"></i>
                                 </span>
-                                <a href="#" title="Page">
-                                    <i class="fa fa-file-text-o" aria-hidden="true"></i>page</a>
+                                <a href="/shopPage" title="Page">
+                                    <i class="fa fa-file-text-o" aria-hidden="true"></i>shop</a>
                                 <div class="subCategory collapse" id="page" aria-expanded="true" role="status">
-                                    <ul class="group-page">
-                                        <li class="item container group">
-                                            <div>
-                                                <ul>
-                                                    <li class="item col-md-4 ">
-                                                        <span class="menu-title">Category Style</span>
-                                                        <div class="menu-content">
-                                                            <ul class="col">
-                                                                <li>
-                                                                    <a href="product-grid-sidebar-left.html">Product
-                                                                        Grid (Sidebar Left)</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="product-grid-sidebar-right.html">Product
-                                                                        Grid (Sidebar Right)</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="product-list-sidebar-left.html">Product
-                                                                        List (Sidebar Left) </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                    <li class="item col-md-4 html">
-                                                        <span class="menu-title">Product Detail Style</span>
-                                                        <div class="menu-content">
-                                                            <ul>
-                                                                <li>
-                                                                    <a href="product-detail.html">Product Detail
-                                                                        (Sidebar Left)</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="#">Product Detail (Sidebar Right)</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                    <li class="item col-md-4 html">
-                                                        <span class="menu-title">Bonus Page</span>
-                                                        <div class="menu-content">
-                                                            <ul>
-                                                                <li>
-                                                                    <a href="404.html">404 Page</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="about-us.html">About Us Page</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                    </ul>
                                 </div>
                             </li>
                             <li class="item has-sub">
-                                <a href="contact.html" title="Contact us">
+                                <a href="/contact" title="Contact us">
                                     <i class="fa fa-map-marker" aria-hidden="true"></i>Contact us</a>
                             </li>
                         </ul>

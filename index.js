@@ -14,10 +14,11 @@ const multer = require("multer")
 const session = require("express-session");
 const Razorpay=require('razorpay');
 
-
+RAZORPAY_KEY_ID="rzp_test_BpSJANNcT49vSc"
+RAZORPAY_KEY_SECRET="iLoNeVfdYXJutthBV6ihAZvI"
 var instance = new Razorpay({
-  key_id: process.env.RAZORPAY_KEY_ID,
-  key_secret: process.env.RAZORPAY_KEY_SECRET,
+  key_id:"rzp_test_BpSJANNcT49vSc",
+  key_secret:"iLoNeVfdYXJutthBV6ihAZvI"
 });
 
 //session
@@ -36,6 +37,11 @@ hbs.registerHelper('addOne', function(index) {
 hbs.registerHelper('neq', function(a,b){
   return a!==b;
 }); 
+
+hbs.registerHelper('lte', function(a, b) {
+  return  a>=b;
+});
+
 
 hbs.registerHelper('eq', function (a, b) {
   return a === b;

@@ -10,8 +10,8 @@ const mongoose = require('mongoose');
 const moment = require('moment')
 const { log } = require('handlebars/runtime');
 const { ObjectId } = require('mongodb');
-// const puppeteer = require('puppeteer');
-// const randomstring = require('randomstring')
+const puppeteer = require('puppeteer');
+const randomstring = require('randomstring')
 
 
 function generateOtp() {
@@ -127,7 +127,7 @@ const verifyOtp = async (req, res) => {
         if (!userEmail) {
             const userData = user.save();
             if (userData) {
-                res.render("registration", { message: "Your registration has been successful" });
+                res.redirect('/login');
             }
             else {
                 res.render("registration", { message: "Your registration has been failed" });
@@ -160,7 +160,6 @@ const loadHome = async (req, res) => {
     try {
         const categoryData = await Category.find()
         const productallData = await Product.find();
-        console.log(categoryData, 163);
         if (req.session.user_id) {
             const userId = req.session.user_id
             const userData = await User.findById(userId)
@@ -354,12 +353,13 @@ const productDetail = async (req, res) => {
 
             userData = req.session.user_id;
         }
+        
 
         res.render("productDetail", { productData, productId, cartId, categoryData, userData });
     } catch (error) {
         console.log(error.message);
         res.render('404')
-        // res.status(500).send("Internal Server Error");
+
     }
 };
 
@@ -437,12 +437,9 @@ const addToCart = async (req, res) => {
         const userData = req.session.user_id
         const productId = req.query.id;
         const quantity = req.query.quantity
-
-        console.log(quantity);
         const product = await Product.findById(productId);
 
         const existed = await User.findOne({ _id: userData, "cart.product": productId });
-
 
         if (existed) {
 
@@ -451,7 +448,6 @@ const addToCart = async (req, res) => {
                 { $inc: { "cart.$.quantity": quantity } },
                 { new: true }
             );
-
 
             res.json({ message: "Item already in cart!!" });
         } else {
@@ -478,6 +474,22 @@ const addToCart = async (req, res) => {
         // res.render("404", { userData });
     }
 };
+
+
+const checklogin = async (req, res) => {
+
+    // Check if the user is logged in
+    if (req.session.user) {
+      // User is logged in
+      res.json({ loggedIn: true });
+    } else {
+      // User is not logged in
+      res.json({ loggedIn: false });
+    }
+  
+  
+  
+  }
 
 
 const updateCart = async (req, res) => {
@@ -771,11 +783,8 @@ const deleteAddress = async (req, res) => {
 }
 
 const loadOrderReview = async (req, res) => {
-
-    console.log("inside loadreciew");
     try {
         const user_id = req.session.user_id
-        console.log(user_id, 731);
         const userData = await User.findById(user_id)
         const addressData = req.session.paymentAddress
         const payment = req.session.payment
@@ -1019,57 +1028,57 @@ const orderConfirmation = async (req, res) => {
     }
 }
 
-// const downloadInvoice = async (req, res) => {
-//     try {
+const downloadInvoice = async (req, res) => {
+    try {
 
-//         const orderId = req.query.orderId
-//         const orderData = await Order.findById(orderId)
-//         const browser = await puppeteer.launch({ headless: false })
-//         const page = await browser.newPage()
+        const orderId = req.query.orderId
+        const orderData = await Order.findById(orderId)
+        const browser = await puppeteer.launch({ headless: false })
+        const page = await browser.newPage()
 
-//         await page.goto(`${req.protocol}://${req.get('host')}/invoice?orderId=${orderId}`, {
-//             waitUntil: 'networkidle2'
-//         })
+        await page.goto(`${req.protocol}://${req.get('host')}/invoice?orderId=${orderId}`, {
+            waitUntil: 'networkidle2'
+        })
 
-//         const todayDate = new Date()
+        const todayDate = new Date()
 
-//         const pdfBuffer = await page.pdf({
-//             format: 'A4',
-//             printBackground: true,
-//         });
+        const pdfBuffer = await page.pdf({
+            format: 'A4',
+            printBackground: true,
+        });
 
-//         await browser.close()
+        await browser.close()
 
-//         res.set({
-//             'Content-Type': 'application/pdf',
-//             'Content-Disposition': `attachment; filename=${orderData.orderId}Invoice.pdf`,
-//         });
+        res.set({
+            'Content-Type': 'application/pdf',
+            'Content-Disposition': `attachment; filename=${orderData.orderId}Invoice.pdf`,
+        });
 
-//         res.send(pdfBuffer);
+        res.send(pdfBuffer);
 
-//     } catch (error) {
-//         console.log(error.message);
-//     }
-// }
+    } catch (error) {
+        console.log(error.message);
+    }
+}
 
-// const invoice = async (req, res) => {
-//     try {
+const invoice = async (req, res) => {
+    try {
 
-//         const orderId = req.query.orderId;
-//         const orderData = await Order.findById(orderId)
-//         const userDatas = await User.findById(orderData.userId)
-//         const address = await Address.findById(orderData.address)
+        const orderId = req.query.orderId;
+        const orderData = await Order.findById(orderId)
+        const userDatas = await User.findById(orderData.userId)
+        const address = await Address.findById(orderData.address)
 
-//         console.log(orderData, 1003)
-//         console.log(userDatas, 1004)
-//         console.log(address, 1005)
-//         const invoiceDate = moment(new Date()).format('MMMM D, YYYY')
-//         res.render('invoice', { orderData, userDatas, invoiceDate, address })
+        console.log(orderData, 1003)
+        console.log(userDatas, 1004)
+        console.log(address, 1005)
+        const invoiceDate = moment(new Date()).format('MMMM D, YYYY')
+        res.render('invoice', { orderData, userDatas, invoiceDate, address })
 
-//     } catch (error) {
-//         console.log(error.message);
-//     }
-// }
+    } catch (error) {
+        console.log(error.message);
+    }
+}
 
 
 
@@ -1077,7 +1086,8 @@ const loadUserProfile = async (req, res) => {
     try {
         const userId = req.session.user_id;
         const userData = await User.findById(userId);
-        const addressData = await Address.findOne({ is_default: true });
+        // const addressData = await Address.findOne({ is_default: true });
+        const addressData = await Address.findOne({ userId:userId, is_default: true });
         const Data = await Category.find()
         res.render('userProfile', { userData, addressData });
     } catch (error) {
@@ -1383,8 +1393,8 @@ module.exports = {
     checkStock,
     placeOrder,
     orderConfirmation,
-    // downloadInvoice,
-    // invoice,
+    downloadInvoice,
+    invoice,
     loadUserProfile,
     userAddress,
     shopPage,
@@ -1393,5 +1403,6 @@ module.exports = {
     userOrderfullDetails,
     walletHistory,
     cancellOrder,
-    returnOrder
+    returnOrder,
+    checklogin 
 }

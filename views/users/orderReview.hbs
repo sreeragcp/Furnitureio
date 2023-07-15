@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
   <!-- Google fonts - Roboto -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700">
+  
   <!-- owl carousel-->
   {{!--
   <link rel="stylesheet" href="/vendor/owl.carousel/assets/owl.carousel.css">
@@ -32,7 +33,9 @@
   {{!--
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> --}}
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.min.css">
+
+ 
+
 
 </head>
 
@@ -240,30 +243,47 @@
                   <br>
 
                 </div>
+<script>
+  const total = document.getElementById("totalAmount").innerHTML
 
+  console.log(total,"total")
+</script>
 
                 <div class="dropdown">
                   <input style="width: 110%;" type="text" class="form-control" id="checkout-discount-input"
                     placeholder="Coupon code">
                   <ul id="coupon-dropdown" class="dropdown-menu">
                     {{#if availableCoupons}}
+
                     {{#each availableCoupons}}
+
+                    {{#if (lte subTotal this.minAmount )}}
                     <li onclick="selectCoupon('{{this.code}}')">
                       {{this.code}} <small> get
                         {{this.discount}}%
                         discount </small> </li>
-                    {{/each}}
-                    {{else}}
+                      {{else}}
+                      <li onclick="selectCoupon('{{this.code}}')">
+                      {{this.code}} <small> get
+                        {{this.discount}}%
+                        discount </small> </li>
+                    {{/if}}
+
+                  
+                   
+
+                     {{/each}}
+                       {{else}}
                     <li>No coupons available</li>
                     {{/if}}
                   </ul>
                 </div>
 
 
-                <button onclick="validateCoupon()" class="btn btnCoupon btn-outline-primary-2" type="submit" style="background-color: #cdd3cd;
-    margin-top: 8px;
-    margin-left: 24px;
-    height: 34px;"><i class="icon-long-arrow-right"></i></button>
+                <button onclick="validateCoupon()" class="btn btnCoupon btn-outline-primary-2" type="submit" style="background-color: #cdd3cd; margin-top: 8px; margin-left: 24px; height: 34px;">
+  <i class="fas fa-long-arrow-right"></i>
+</button>
+
 
 
 
@@ -426,128 +446,6 @@
 <script>
   let couponDATA
   let updateWallet
-  const placeOrder = () => {
-
-    console.log("ïnside plce order")
-    const payment = document.getElementById("paymentId").value
-    console.log(payment)
-    if (payment === "COD") {
-      Cod()
-    }
-    else if (payment === "Razorpay") {
-      initiateRazorpay()
-    }
-    else if (payment === "wallet") {
-      useWallet()
-    }
-
-
-
-  }
-  const Cod = async () => {
-    console.log("inside cod")
-    const response = await fetch("/checkStock", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-
-
-    const data = await response.json();
-    console.log(data.message, "this is response")
-
-    if (data.message === "In stock") {
-
-      let subTotal = document.getElementById("susubTotalbTotal").value
-      const payment = document.getElementById("paymentId").value
-      if (couponDATA.newTotal) {
-        subTotal = couponDATA.newTotal
-      }
-      else {
-        subTotal = subTotal
-      }
-      console.log(subTotal, 'this is inside place order sub total')
-
-      const placeOrderResponse = await fetch('/placeOrder', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-
-          selectedPayment: payment,
-          couponData: couponDATA,
-          amount: subTotal,
-          updateWallet: updateWallet
-        })
-      });
-      const respond = await placeOrderResponse.json();
-      let lastOrderId = respond.lastOrder
-      if (respond) {
-        window.location.href = '/orderConfirmation'
-      }
-    } else {
-      Swal.fire({
-        icon: "error",
-        title: "out of stock!!",
-        showConfirmButton: true,
-        confirmButtonText: "CANCEL",
-        confirmButtonColor: "#D22B2B",
-      });
-    }
-  }
-
-  function initiateRazorpay() {
-    console.log("inside the Razorpay");
-    let subTotal = document.getElementById("susubTotalbTotal").value;
-    if (couponDATA.newTotal) {
-      subTotal = couponDATA.newTotal
-    }
-    else {
-      subTotal = subTotal
-    }
-
-    console.log(subTotal, 344);
-
-
-    var options = {
-      key: "rzp_test_BpSJANNcT49vSc", // Enter the Key ID generated from the Dashboard
-      amount: subTotal * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-      currency: "INR",
-      order_id: undefined, // This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-      handler: function (response) {
-        console.log("under cod");
-        Cod();
-      },
-    };
-
-    var rzp1 = new Razorpay(options); // Assuming `Razorpay` is globally available from the library
-    rzp1.open();
-
-  }
-
-
-  const useWallet = () => {
-    const myWalletElement = document.getElementById('myWallet');
-    let walletValue = myWalletElement.getAttribute('value');
-    //let subTotal = document.querySelector('.totalValue').value 
-    let subTotal = document.getElementById("susubTotalbTotal").value;
-
-    walletValue = parseInt(walletValue)
-    subTotal = parseInt(subTotal)
-    console.log(walletValue, 'is the current wallet balancre and total is', subTotal)
-    if (walletValue > subTotal) {
-      console.log('entering inside if of callin cod block')
-      updateWallet = walletValue - subTotal
-
-      Cod()
-    } else {
-      console.log('enetring else block')
-      //alertify.set('notifier', 'position', 'bottom-center');
-      //alertify.success('you dont have sufficient balance in ur wallet choose another payment method')
-    }
-  }
 
 
   function selectCoupon(code) {
@@ -558,7 +456,6 @@
 
   const validateCoupon = async () => {
 
-    console.log("inside the validate coupon")
     const coupon = document.getElementById("checkout-discount-input").value;
     const subTotal = Number(document.getElementById("subTotalValue").value);
     const response = await fetch("/validateCoupon", {
@@ -576,7 +473,6 @@
     couponDATA = couponData
     const couponModel = document.getElementById("couponModel");
     const couponMessage = document.getElementById("couponMessage");
-    //const couponDiscount = document.getElementById("couponDiscount");
 
     const subTotalElement = document.getElementById("subTotal");
     const subTotalText = document.getElementById("subTotalText");
@@ -612,10 +508,6 @@
         showConfirmButton: true,
         confirmButtonText: "OK",
         confirmButtonColor: "#4CAF50",
-
-
-
-
       });
 
       document.getElementById("couponDiscount").innerHTML = `₹ ${couponData.discountAmount}`
@@ -626,6 +518,124 @@
       subTotalText.innerHTML = "Total After Discount:";
     }
   };
+
+
+
+
+  const placeOrder = () => {
+    const payment = document.getElementById("paymentId").value
+    console.log(payment)
+    if (payment === "COD") {
+      Cod()
+    }
+    else if (payment === "Razorpay") {
+      initiateRazorpay()
+    }
+    else if (payment === "wallet") {
+      useWallet()
+    }
+
+
+
+  }
+  const Cod = async () => {
+    console.log("inside cod")
+    const response = await fetch("/checkStock", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+
+    const data = await response.json();
+
+    if (data.message === "In stock") {
+
+      let subTotal = document.getElementById("susubTotalbTotal").value
+      const payment = document.getElementById("paymentId").value
+      if (couponDATA) {
+        subTotal = couponDATA.newTotal
+
+      }
+      else {
+        subTotal = subTotal
+      }
+
+      const placeOrderResponse = await fetch('/placeOrder', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+
+          selectedPayment: payment,
+          couponData:couponDATA,
+          amount: subTotal,
+          updateWallet: updateWallet
+        })
+      });
+      const respond = await placeOrderResponse.json();
+      let lastOrderId = respond.lastOrder
+      if (respond) {
+        window.location.href = '/orderConfirmation'
+      }
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "out of stock!!",
+        showConfirmButton: true,
+        confirmButtonText: "CANCEL",
+        confirmButtonColor: "#D22B2B",
+      });
+    }
+  }
+
+  function initiateRazorpay() {
+    let subTotal = document.getElementById("susubTotalbTotal").value;
+    if (couponDATA) {
+      subTotal = couponDATA.newTotal
+    }
+    else {
+      subTotal = subTotal
+    }
+
+    var options = {
+      key: "rzp_test_BpSJANNcT49vSc", // Enter the Key ID generated from the Dashboard
+      amount: subTotal * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+      currency: "INR",
+      order_id: undefined, // This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+      handler: function (response) {
+        console.log("under cod");
+        Cod();
+      },
+    };
+
+    var rzp1 = new Razorpay(options); // Assuming `Razorpay` is globally available from the library
+    rzp1.open();
+
+  }
+
+
+  const useWallet = () => {
+    const myWalletElement = document.getElementById('myWallet');
+    let walletValue = myWalletElement.getAttribute('value');
+    let subTotal = document.getElementById("susubTotalbTotal").value;
+
+    walletValue = parseInt(walletValue)
+    subTotal = parseInt(subTotal)
+    console.log(walletValue, 'is the current wallet balancre and total is', subTotal)
+    if (walletValue > subTotal) {
+      console.log('entering inside if of callin cod block')
+      updateWallet = walletValue - subTotal
+
+      Cod()
+    } else {
+      console.log('enetring else block')
+    }
+  }
+
+
 
 
 </script>

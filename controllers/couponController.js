@@ -33,7 +33,7 @@ const loadAddCouponPage = async (req, res) => {
 const addCoupon = async(req,res)=>{
     try {
 
-        const { couponCode, couponDiscount,couponAmount, couponDate } = req.body;
+        const { couponCode, couponDiscount,couponAmount, couponDate,minAmount } = req.body;
 
         const couponCodeUpperCase = couponCode.toUpperCase();
       
@@ -44,7 +44,9 @@ const addCoupon = async(req,res)=>{
                 code :couponCodeUpperCase,
                 discount :couponDiscount,
                 maxAmount :couponAmount,
-                expiryDate :couponDate
+                expiryDate :couponDate,
+                minAmount:minAmount
+
             })
             await coupon.save()
 

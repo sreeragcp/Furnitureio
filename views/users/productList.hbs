@@ -14,7 +14,7 @@
                 <!-- logo -->
                 <div class="mobile-logo">
                     <a href="index-2.html">
-                        <img class="logo-mobile img-fluid" src="img/home/logo-mobie.png" alt="Prestashop_Furnitica">
+                        <img class="logo-mobile img-fluid" src="/img/homelogo.png" alt="Prestashop_Furnitica" style="width:14rem;height:2rem;mix-blend-mode: darken;">
                     </a>
                 </div>
 
@@ -26,7 +26,7 @@
 
             <!-- search -->
             <div id="mobile_search" class="d-flex">
-                <div id="mobile_search_content">
+                {{!-- <div id="mobile_search_content">
                     <form method="get" action="#">
 
                         <input type="text" name="s" value="" placeholder="Search">
@@ -34,55 +34,13 @@
                             <i class="fa fa-search"></i>
                         </button>
                     </form>
-                </div>
+                </div> --}}
                 <div class="desktop_cart">
                     <div class="blockcart block-cart cart-preview tiva-toggle">
                         <div class="header-cart tiva-toggle-btn">
-                            <span class="cart-products-count"></span>
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                
+                            <a href="/loadCart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                         </div>
-                        {{!-- <div class="dropdown-content">
-                            <div class="cart-content">
-                                <table>
-                                    <tbody>
-                                        <tr>
-                                            <td class="product-image">
-                                                <a href="product-detail.html">
-                                                    <img src="img/product/5.jpg" alt="Product">
-                                                </a>
-                                            </td>
-                                            <td>
-                                                <div class="product-name">
-                                                    <a href="product-detail.html">Organic Strawberry Fruits</a>
-                                                </div>
-                                                <div>
-                                                    2 x
-                                                    <span class="product-price">£28.98</span>
-                                                </div>
-                                            </td>
-                                            <td class="action">
-                                                <a class="remove" href="#">
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr class="total">
-                                            <td colspan="2">Total:</td>
-                                            <td>£92.96</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td colspan="3" class="d-flex justify-content-center">
-                                                <div class="cart-button">
-                                                    <a href="product-cart.html" title="View Cart">View Cart</a>
-                                                    <a href="product-checkout.html" title="Checkout">Checkout</a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -198,99 +156,15 @@
                                             <span>My Wishlists</span>
                                         </a>
                                     </div>
-                                    {{!-- <div id="desktop_currency_selector"
-                                        class="currency-selector groups-selector hidden-sm-down">
-                                        <ul class="list-inline">
-                                            <li>
-                                                <a title="Euro" rel="nofollow" href="#">EUR</a>
-                                            </li>
-                                            <li class="current list-inline-item">
-                                                <a title="British Pound Sterling" rel="nofollow" href="#">GBP</a>
-                                            </li>
-                                        </ul>
-                                    </div> --}}
-                                    {{!-- <div id="desktop_language_selector"
-                                        class="language-selector groups-selector hidden-sm-down">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-itemcurrent">
-                                                <a href="#">
-                                                    <img class="img-fluid" src="img/home/home1-flas.jpg" alt="English"
-                                                        width="16" height="11">
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="#">
-                                                    <img class="img-fluid" src="img/home/home1-flas2.jpg" alt="Italiano"
-                                                        width="16" height="11">
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="#">
-                                                    <img class="img-fluid" src="img/home/home1-flas3.jpg" alt="Français"
-                                                        width="16" height="11">
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="#">
-                                                    <img class="img-fluid" src="img/home/home1-flas4.jpg" alt="Español"
-                                                        width="16" height="11">
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div> --}}
+                                   
                                 </div>
                             </div>
                         </div>
                         <div class="desktop_cart">
                             <div class="blockcart block-cart cart-preview tiva-toggle">
                                 <div class="header-cart tiva-toggle-btn">
-                                    {{!-- <span class="cart-products-count"></span> --}}
                                     <a href="/loadCart"><i  class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                                 </div>
-                                {{!-- <div class="dropdown-content">
-                                    <div class="cart-content">
-                                        <table>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="product-image">
-                                                        <a href="product-detail.html">
-                                                            <img src="img/product/5.jpg" alt="Product">
-                                                        </a>
-                                                    </td>
-                                                    <td>
-                                                        <div class="product-name">
-                                                            <a href="product-detail.html">Organic Strawberry Fruits</a>
-                                                        </div>
-                                                        <div>
-                                                            2 x
-                                                            <span class="product-price">£28.98</span>
-                                                        </div>
-                                                    </td>
-                                                    <td class="action">
-                                                        <a class="remove" href="#">
-                                                            <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr class="total">
-                                                    <td colspan="2">Total:</td>
-                                                    <td>£92.96</td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td colspan="3" class="d-flex justify-content-center">
-                                                        <div class="cart-button">
-                                                            <a href="product-cart.html" title="View Cart">View Cart</a>
-                                                            <a href="product-checkout.html"
-                                                                title="Checkout">Checkout</a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div> --}}
-
                             </div>
                         </div>
                     </div>
@@ -312,7 +186,7 @@
                                 <div class="breadcrumb">
                                     <ol>
                                         <li>
-                                            <a href="#">
+                                            {{!-- <a href="#">
                                                 <span>Home</span>
                                             </a>
                                         </li>
@@ -320,7 +194,7 @@
                                             <a href="#">
                                                 <span>sofa</span>
                                             </a>
-                                        </li>
+                                        </li> --}}
                                     </ol>
                                 </div>
                             </div>
@@ -334,6 +208,7 @@
                                         <!-- category menu -->
                                         <div class="sidebar-block">
                                             <div class="title-block">Categories</div>
+                                            {{#each Data}}
                                             <div class="block-content">
                                                 <div class="cateTitle hasSubCategory open level1">
                                                     <span class="arrow collapsed collapse-icons" data-toggle="collapse"
@@ -341,448 +216,10 @@
                                                         <i class="zmdi zmdi-minus"></i>
                                                         <i class="zmdi zmdi-plus"></i>
                                                     </span>
-                                                    <a class="cateItem" href="#">Living Room</a>
-                                                    <div class="subCategory collapse" id="livingroom"
-                                                        aria-expanded="true" role="status">
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">Side Table</a>
-                                                            <div class="subCategory collapse" id="subCategory-fruits"
-                                                                aria-expanded="true" role="status">
-                                                                <div class="cateTitle">
-                                                                    <a href="#" class="cateItem">Side Table</a>
-                                                                </div>
-                                                                <div class="cateTitle">
-                                                                    <a href="#" class="cateItem">FIREPLACE</a>
-                                                                </div>
-                                                                <div class="cateTitle">
-                                                                    <a href="#" class="cateItem">FIREPLACE</a>
-                                                                </div>
-                                                                <div class="cateTitle">
-                                                                    <a href="#" class="cateItem">floor lamp</a>
-                                                                </div>
-                                                                <div class="cateTitle">
-                                                                    <a href="#" class="cateItem">ottoman</a>
-                                                                </div>
-                                                                <div class="cateTitle">
-                                                                    <a href="#" class="cateItem">armchair</a>
-                                                                </div>
-                                                                <div class="cateTitle">
-                                                                    <a href="#" class="cateItem">cushion</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">FIREPLACE</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">FIREPLACE</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">floor lamp</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">ottoman</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">armchair</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">cushion</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="cateTitle hasSubCategory open level1">
-                                                    <span class="arrow collapsed collapse-icons" data-toggle="collapse"
-                                                        data-target="#bathroom" aria-expanded="false" role="status">
-                                                        <i class="zmdi zmdi-minus"></i>
-                                                        <i class="zmdi zmdi-plus"></i>
-                                                    </span>
-                                                    <a class="cateItem" href="#">Bathroom</a>
-                                                    <div class="subCategory collapse" id="bathroom"
-                                                        aria-expanded="false" role="status">
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">TOMATO</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">BROCCOLI</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">CABBAGE</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">CUCUMBER</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">EGGPLANT</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="cateTitle hasSubCategory open level1">
-                                                    <span class="arrow collapsed collapse-icons" data-toggle="collapse"
-                                                        data-target="#diningroom" aria-expanded="false" role="status">
-                                                        <i class="zmdi zmdi-minus"></i>
-                                                        <i class="zmdi zmdi-plus"></i>
-                                                    </span>
-                                                    <a class="cateItem" href="#">Dining Rooom</a>
-                                                    <div class="subCategory collapse" id="diningroom"
-                                                        aria-expanded="true" role="status">
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">DRY BREAD</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">BREAD SLICES</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">FRENCH BREAD</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">BLACK BREAD</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="cateTitle hasSubCategory open level1">
-                                                    <span class="arrow collapsed collapse-icons" data-toggle="collapse"
-                                                        data-target="#bedroom" aria-expanded="false" role="status">
-                                                        <i class="zmdi zmdi-minus"></i>
-                                                        <i class="zmdi zmdi-plus"></i>
-                                                    </span>
-                                                    <a class="cateItem" href="#">BedRoom</a>
-                                                    <div class="subCategory collapse" id="bedroom" aria-expanded="true"
-                                                        role="status">
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">ORANGE JUICES</a>
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">TOMATO JUICES</a>
-                                                            </div>
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">APPLE JUICES</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="cateTitle hasSubCategory open level1">
-                                                    <span class="arrow collapsed collapse-icons" data-toggle="collapse"
-                                                        data-target="#kitchen" aria-expanded="false" role="status">
-                                                        <i class="zmdi zmdi-minus"></i>
-                                                        <i class="zmdi zmdi-plus"></i>
-                                                    </span>
-                                                    <a class="cateItem" href="#">Kitchen</a>
-                                                    <div class="subCategory collapse" id="kitchen" aria-expanded="true"
-                                                        role="status">
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">ORANGE JUICES</a>
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">TOMATO JUICES</a>
-                                                            </div>
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">APPLE JUICES</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    <a class="cateItem" href="/productlist/{{this._id}}">{{this.category}}</a>
                                                 </div>
                                             </div>
-                                        </div>
-
-                                        <!-- best seller -->
-                                        {{!-- <div class="sidebar-block">
-                                            <div class="title-block">Catalog</div>
-                                            <div class="new-item-content">
-                                                <h3 class="title-product">categories</h3>
-                                                <ul class="scroll-product">
-                                                    <li>
-                                                        <label class="check">
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                        <a href="#">
-                                                            <b>side table</b>
-                                                            <span class="quantity">(30)</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <label class="check">
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                        <a href="#">
-                                                            <b>floor lamp</b>
-                                                            <span class="quantity">(32)</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <label class="check">
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                        <a href="#">
-                                                            <b>ottoman</b>
-                                                            <span class="quantity">(67)</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <label class="check">
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                        <a href="#">
-                                                            <b>armchair</b>
-                                                            <span class="quantity">(15)</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <label class="check">
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                        <a href="#">
-                                                            <b>OTTOMAN</b>
-                                                            <span class="quantity">(24)</span>
-
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <label class="check">
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                        <a href="#">
-                                                            <b>CUSHION</b>
-                                                            <span class="quantity">(20)</span>
-
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <label class="check">
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                        <a href="#">
-                                                            <b>Pineapple</b>
-                                                            <span class="quantity">(21)</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="new-item-content">
-                                                <h3 class="title-product">Manufacture</h3>
-                                                <ul class="scroll-product">
-                                                    <li>
-                                                        <label class="check">
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                        <a href="#">
-                                                            <b>Samsung</b>
-                                                            <span class="quantity">(30)</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <label class="check">
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                        <a href="#">
-                                                            <b>Dell</b>
-                                                            <span class="quantity">(30)</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <label class="check">
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                        <a href="#">
-                                                            <b>Polygon</b>
-                                                            <span class="quantity">(30)</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <label class="check">
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                        <a href="#">
-                                                            <b>Newment</b>
-                                                            <span class="quantity">(30)</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <label class="check">
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                        <a href="#">
-                                                            <b>Asus</b>
-                                                            <span class="quantity">(30)</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <label class="check">
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                        <a href="#">
-                                                            <b>Mac</b>
-                                                            <span class="quantity">(30)</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <label class="check">
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                        <a href="#">
-                                                            <b>Vaio</b>
-                                                            <span class="quantity">(30)</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <label class="check">
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                        <a href="#">
-                                                            <b>Lettuce</b>
-                                                            <span class="quantity">(30)</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="tiva-filter-price new-item-content sidebar-block">
-                                                <h3 class="title-product">By Price</h3>
-                                                <div id="block_price_filter" class="block">
-                                                    <div class="block-content">
-                                                        <div id="slider-range" class="tiva-filter">
-                                                            <div class="filter-itemprice-filter">
-                                                                <div class="layout-slider">
-                                                                    <input id="price-filter" name="price"
-                                                                        value="0;100" />
-                                                                </div>
-                                                                <div class="layout-slider-settings"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="sidebar-block by-color">
-                                                <h3 class="title-product">By Color</h3>
-                                                <div>
-                                                    <span class="left">
-                                                        <label class="color-item1"></label>
-                                                        <a href="#">
-                                                            <span>Blue
-                                                                <span>(30)</span>
-                                                            </span>
-                                                        </a>
-                                                    </span>
-                                                    <span class="right">
-                                                        <label class="color-item2"></label>
-                                                        <a href="#">
-                                                            <span>Green
-                                                                <span>(30)</span>
-                                                            </span>
-                                                        </a>
-                                                    </span>
-                                                </div>
-                                                <div>
-                                                    <span class="left">
-                                                        <label class="color-item3"></label>
-                                                        <a href="#">
-                                                            <span>Yellow
-                                                                <span>(30)</span>
-                                                            </span>
-                                                        </a>
-                                                    </span>
-                                                    <span class="right">
-                                                        <label class="color-item4"></label>
-                                                        <a href="#">
-                                                            <span>Brown
-                                                                <span>(30)</span>
-                                                            </span>
-                                                        </a>
-                                                    </span>
-
-                                                </div>
-                                                <div>
-                                                    <span class="left">
-                                                        <label class="color-item5"></label>
-                                                        <a href="#">
-                                                            <span>Pink
-                                                                <span>(30)</span>
-                                                            </span>
-                                                        </a>
-                                                    </span>
-                                                    <span class="right">
-                                                        <label class="color-item6"></label>
-                                                        <a href="#">
-                                                            <span>Red
-                                                                <span>(30)</span>
-                                                            </span>
-                                                        </a>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div> --}}
-
-                                        <!-- product tag -->
-                                        <div class="sidebar-block product-tags">
-                                            <div class="title-block">
-                                                Product Tags
-                                            </div>
-                                            <div class="block-content">
-                                                <ul class="listSidebarBlog list-unstyled">
-                                                    <li>
-                                                        <a href="#" title="Show products matching tag Hot Trend">Hot
-                                                            Trend</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="#"
-                                                            title="Show products matching tag Jewelry">Jewelry</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="man.html"
-                                                            title="Show products matching tag Man">Man</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="#" title="Show products matching tag Party">Party</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="#"
-                                                            title="Show products matching tag SamSung">SamSung</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="#"
-                                                            title="Show products matching tag Shirt Dresses">Shirt
-                                                            Dresses</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="#" title="Show products matching tag Shoes">Shoes</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="#" title="Show products matching tag Summer">Summer</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="#"
-                                                            title="Show products matching tag Sweaters">Sweaters</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="#" title="Show products matching tag Winter">Winter</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="#" title="Show products matching tag Woman">Woman</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                            {{/each}}
                                         </div>
                                     </div>
                                     <div class="col-sm-8 col-lg-9 col-md-8 product-container">
@@ -1691,7 +1128,7 @@
                                                                                 {{this.description}}
                                                                             </div>
                                                                         </div>
-                                                                        <div class="product-buttons d-flex">
+                                                                        {{!-- <div class="product-buttons d-flex">
                                                                             <form action="#" method="post"
                                                                                 class="formAddToCart">
                                                                                 <a class="add-to-cart" href="#"
@@ -1712,7 +1149,7 @@
                                                                                 <i class="fa fa-eye"
                                                                                     aria-hidden="true"></i>
                                                                             </a>
-                                                                        </div>
+                                                                        </div> --}}
                                                                     </div>
                                                                 </div>
 
@@ -2788,519 +2225,7 @@
     </div>
 
     <!-- menu mobie left -->
-    <div class="mobile-top-menu d-md-none">
-        <button type="button" class="close" aria-label="Close">
-            <i class="zmdi zmdi-close"></i>
-        </button>
-        <div class="tiva-verticalmenu block" data-count_showmore="17">
-            <div class="box-content block-content">
-                <div class="verticalmenu" role="navigation">
-                    <ul class="menu level1">
-                        <li class="item  parent">
-                            <a href="#" class="hasicon" title="SIDE TABLE">
-                                <img src="img/home/table-lamp.png" alt="img">SIDE TABLE</a>
-                            <span class="arrow collapsed" data-toggle="collapse" data-target="#SIDE-TABLE"
-                                aria-expanded="false" role="status">
-                                <i class="zmdi zmdi-minus"></i>
-                                <i class="zmdi zmdi-plus"></i>
-                            </span>
-                            <div class="subCategory collapse" id="SIDE-TABLE" aria-expanded="true" role="status">
-                                <ul>
-                                    <li class="item">
-                                        <a href="#" title="Aliquam lobortis">Aliquam lobortis</a>
-                                    </li>
-                                    <li class="item  parent-submenu">
-                                        <a href="#" title="Duis Reprehenderit">Duis Reprehenderit</a>
-                                        <span class="arrow collapsed" data-toggle="collapse" data-target="#sub-Category"
-                                            aria-expanded="false" role="status">
-                                            <i class="zmdi zmdi-minus"></i>
-                                            <i class="zmdi zmdi-plus"></i>
-                                        </span>
-                                        <div class="subCategory collapse" id="sub-Category" aria-expanded="true"
-                                            role="status">
-                                            <ul>
-                                                <li class="item">
-                                                    <a href="#" title="Aliquam lobortis">Aliquam lobortis</a>
-                                                </li>
-                                                <li class="item">
-                                                    <a href="#" title="Duis Reprehenderit">Duis Reprehenderit</a>
-                                                </li>
-                                                <li class="item">
-                                                    <a href="#" title="Voluptate">Voluptate</a>
-                                                </li>
-                                                <li class="item">
-                                                    <a href="#" title="Tongue Est">Tongue Est</a>
-                                                </li>
-                                                <li class="item">
-                                                    <a href="#" title="Venison Andouille">Venison Andouille</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="item">
-                                        <a href="#" title="Voluptate">Voluptate</a>
-                                    </li>
-                                    <li class="item">
-                                        <a href="#" title="Tongue Est">Tongue Est</a>
-                                    </li>
-                                    <li class="item">
-                                        <a href="#" title="Venison Andouille">Venison Andouille</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="item  parent group">
-                            <a href="#" class="hasicon" title="FI">
-                                <img src="img/home/fireplace.png" alt="img">FIREPLACE
-                            </a>
-                            <span class="arrow collapsed" data-toggle="collapse" data-target="#fi" aria-expanded="false"
-                                role="status">
-                                <i class="zmdi zmdi-minus"></i>
-                                <i class="zmdi zmdi-plus"></i>
-                            </span>
-                            <div class="subCategory collapse" id="fi" aria-expanded="true" role="status">
-                                <div class="item">
-                                    <div class="menu-content">
-                                        <div class="tags d-flex d-xs-flex-inherit">
-                                            <div class="title">
-                                                <b>DINNING ROOM</b>
-                                            </div>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <a href="#">Toshiba</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Samsung</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">LG</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Sharp</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Electrolux</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Hitachi</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Panasonic</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Mitsubishi Electric</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Daikin</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Haier</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="tags d-flex d-xs-flex-inherit">
-                                            <div class="title">
-                                                <b>BATHROOM</b>
-                                            </div>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <a href="#">Toshiba</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Samsung</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">LG</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Sharp</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Electrolux</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Hitachi</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Panasonic</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Mitsubishi Electric</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Daikin</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Haier Media</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Gee</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Digimart</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Vitivaa</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Sanaky</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Sunshine</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="tags d-flex d-xs-flex-inherit">
-                                            <div class="title">
-                                                <b>LIVING ROOM</b>
-                                            </div>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <a href="#">Media</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Gee</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Digimart</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Vitivaa</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Sanaky</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Sunshine</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Toshiba</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Samsung</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">LG</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Sharp</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Electrolux</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Hitachi</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Panasonic</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Mitsubishi Electric</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Daikin</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Haier</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="tags d-flex d-xs-flex-inherit">
-                                            <div class="title">
-                                                <b>BEDROOM</b>
-                                            </div>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <a href="#">LG</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Sharp</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Electrolux</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Hitachi</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Panasonic</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Mitsubishi Electric</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Daikin</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Haier</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="tags d-flex d-xs-flex-inherit">
-                                            <div class="title">
-                                                <b>KITCHEN</b>
-                                            </div>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <a href="#">LG</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Sharp</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Electrolux</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Hitachi</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Panasonic</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Mitsubishi Electric</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Daikin</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Haier</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="tags d-flex d-xs-flex-inherit">
-                                            <div class="title">
-                                                <b>Blender</b>
-                                            </div>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <a href="#">LG</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Sharp</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Electrolux</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Hitachi</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Panasonic</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Mitsubishi Electric</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Daikin</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Haier</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="item group-category-img parent group">
-                            <a href="#" class="hasicon" title="TABLE LAMP">
-                                <img src="img/home/table-lamp.png" alt="img">TABLE LAMP</a>
-                            <span class="arrow collapsed" data-toggle="collapse" data-target="#table-lamp"
-                                aria-expanded="false" role="status">
-                                <i class="zmdi zmdi-minus"></i>
-                                <i class="zmdi zmdi-plus"></i>
-                            </span>
-                            <div class="subCategory collapse" id="table-lamp" aria-expanded="true" role="status">
-                                <div class="item">
-                                    <div class="menu-content">
-                                        <div class="col-xs-12">
-                                            <span class="menu-title">Coventry dining</span>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">Accessories</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Activewear</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">ASOS Basic Tops</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Bags &amp; Purses</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Beauty</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Coats &amp; Jackets</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Curve &amp; Plus Size</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-xs-12">
-                                            <span class="menu-title">Amara stools</span>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">Accessories</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Activewear</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">ASOS Basic Tops</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Bags &amp; Purses</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Beauty</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Coats &amp; Jackets</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Curve &amp; Plus Size</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-xs-12">
-                                            <span class="menu-title">Kingston dining</span>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">Accessories</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Activewear</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">ASOS Basic Tops</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Bags &amp; Purses</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Beauty</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Coats &amp; Jackets</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Curve &amp; Plus Size</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-xs-12">
-                                            <span class="menu-title">Ellinger dining</span>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">Accessories</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Activewear</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">ASOS Basic Tops</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Bags &amp; Purses</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Beauty</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Coats &amp; Jackets</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Curve &amp; Plus Size</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="OTTOMAN">
-                                <img src="img/home/ottoman.png" alt="img">OTTOMAN
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="ARMCHAIR">
-                                <img src="img/home/armchair.png" alt="img">ARMCHAIR
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="CUSHION">
-                                <img src="img/home/cushion.png" alt="img">CUSHION
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="COFFEE TABLE">
-                                <img src="img/home/coffee_table.png" alt="img">COFFEE TABLE</a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="SHELF">
-                                <img src="img/home/shelf.png" alt="img">SHELF
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="SOFA">
-                                <img src="img/home/sofa.png" alt="img">SOFA
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="DRESSING TABLE">
-                                <img src="img/home/dressing.png" alt="img">DRESSING TABLE</a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="WINDOWN CURTAIN">
-                                <img src="img/home/windown.png" alt="img">WINDOWN CURTAIN</a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="CHANDELIER">
-                                <img src="img/home/chandelier.png" alt="img">CHANDELIER
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="CEILING FAN">
-                                <img src="img/home/ceiling_fan.png" alt="img">CEILING FAN</a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="WARDROBE">
-                                <img src="img/home/wardrobe.png" alt="img">WARDROBE
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="FLOOR LAMP">
-                                <img src="img/home/floor_lamp.png" alt="img">FLOOR LAMP</a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="VASE-FLOWER ">
-                                <img src="img/home/vase-flower.png" alt="img">VASE-FLOWER
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="BED">
-                                <img src="img/home/bed.png" alt="img">BED
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="BED GIRL">
-                                <img src="img/home/bed.png" alt="img">BED GIRL</a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="BED BOY">
-                                <img src="img/home/bed.png" alt="img">BED BOY</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
+    
     <!-- menu mobie right -->
     <div id="mobile-pagemenu" class="mobile-boxpage d-flex hidden-md-up active d-md-none">
         <div class="content-boxpage col">
@@ -3317,28 +2242,13 @@
                                 <span class="arrow collapsed" data-toggle="collapse" data-target="#home1"
                                     aria-expanded="true" role="status">
                                     <i class="zmdi zmdi-minus"></i>
-                                    <i class="zmdi zmdi-plus"></i>
+                                    <a href="/"><i class="zmdi zmdi-plus"></i></a>
+                                    
                                 </span>
-                                <a href="index-2.html" title="Home">
+                                <a href="#" title="Home">
                                     <i class="fa fa-home" aria-hidden="true"></i>Home</a>
                                 <div class="subCategory collapse" id="home1" aria-expanded="true" role="status">
-                                    {{!-- <ul>
-                                        <li class="item">
-                                            <a href="index-2.html" title="Home Page 1">Home Page 1</a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="home2.html" title="Home Page 2">Home Page 2</a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="home3.html" title="Home Page 3">Home Page 3</a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="home4.html" title="Home Page 4">Home Page 4</a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="home5.html" title="Home Page 5">Home Page 5</a>
-                                        </li>
-                                    </ul> --}}
+                                    
                                 </div>
                             </li>
                             <li class="item has-sub">
@@ -3348,103 +2258,30 @@
                                     <i class="zmdi zmdi-plus"></i>
                                 </span>
                                 <a href="#" title="Blog">
-                                    <i class="fa fa-address-book" aria-hidden="true"></i>Blog</a>
+                                    {{!-- <i class="fa fa-address-book" aria-hidden="true"></i>Category</a> --}}
+                                   <i class="fa fa-cubes"></i>Category</a>
 
                                 <div class="subCategory collapse" id="blog" aria-expanded="true" role="status">
-                                    {{!-- <ul>
+                                    <ul>
+                                         {{#each Data}}
                                         <li class="item">
-                                            <a href="blog-list-sidebar-left.html" title="Blog List (Sidebar Left)">Blog
-                                                List (Sidebar Left)</a>
+                                            <a href="/productlist/{{this._id}}">{{this.category}}</a>
                                         </li>
-                                        <li class="item">
-                                            <a href="blog-list-sidebar-left2.html"
-                                                title="Blog List (Sidebar Left) 2">Blog List (Sidebar Left) 2</a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="blog-list-sidebar-right.html"
-                                                title="Category Blog (Right column)">Blog List (Sidebar Right)</a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="blog-list-no-sidebar.html" title="Blog List (No Sidebar)">Blog List
-                                                (No Sidebar)</a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="blog-grid-no-sidebar.html" title="Blog Grid (No Sidebar)">Blog Grid
-                                                (No Sidebar)</a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="blog-detail.html" title="Blog Detail">Blog Detail</a>
-                                        </li>
-                                    </ul> --}}
+                                         {{/each}}
+                                    </ul>
                                 </div>
                             </li>
                             <li class="item group has-sub">
                                 <span class="arrow collapsed" data-toggle="collapse" data-target="#page"
                                     aria-expanded="false" role="status">
                                     <i class="zmdi zmdi-minus"></i>
-                                    <i class="zmdi zmdi-plus"></i>
+                                    <a href="/shopPage"><i class="zmdi zmdi-plus"></i></a>
                                 </span>
                                 <a href="#" title="Page">
-                                    <i class="fa fa-file-text-o" aria-hidden="true"></i>page</a>
-                                <div class="subCategory collapse" id="page" aria-expanded="true" role="status">
-                                    <ul class="group-page">
-                                        <li class="item container group">
-                                            <div>
-                                                <ul>
-                                                    <li class="item col-md-4 ">
-                                                        <span class="menu-title">Category Style</span>
-                                                        <div class="menu-content">
-                                                            <ul class="col">
-                                                                <li>
-                                                                    <a href="product-grid-sidebar-left.html">Product
-                                                                        Grid (Sidebar Left)</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="product-grid-sidebar-right.html">Product
-                                                                        Grid (Sidebar Right)</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="product-list-sidebar-left.html">Product
-                                                                        List (Sidebar Left) </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                    <li class="item col-md-4 html">
-                                                        <span class="menu-title">Product Detail Style</span>
-                                                        <div class="menu-content">
-                                                            <ul>
-                                                                <li>
-                                                                    <a href="product-detail.html">Product Detail
-                                                                        (Sidebar Left)</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="#">Product Detail (Sidebar Right)</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                    <li class="item col-md-4 html">
-                                                        <span class="menu-title">Bonus Page</span>
-                                                        <div class="menu-content">
-                                                            <ul>
-                                                                <li>
-                                                                    <a href="404.html">404 Page</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="about-us.html">About Us Page</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
+                                    <i class="fa fa-file-text-o" aria-hidden="true"></i>shop</a>
                             </li>
                             <li class="item has-sub">
-                                <a href="contact.html" title="Contact us">
+                                <a href="/contact" title="Contact us">
                                     <i class="fa fa-map-marker" aria-hidden="true"></i>Contact us</a>
                             </li>
                         </ul>
@@ -3475,7 +2312,6 @@
     <script src="/libs/slider-range/js/jquery.dependClass-0.1.js"></script>
     <script src="/libs/slider-range/js/draggable-0.1.js"></script>
     <script src="/libs/slider-range/js/jquery.slider.js"></script>
-
     <!-- Template JS -->
     <script src="/js/theme.js"></script>
 </body>

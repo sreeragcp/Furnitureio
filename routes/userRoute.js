@@ -16,6 +16,7 @@ user_route.get('/login',auth.isLogout,userController.loginLoad);
 user_route.post('/login',userController.verifyLogin);
 user_route.get('/logout',userController.logout);
 user_route.get('/',userController.loadHome);
+user_route.get('/check-login', userController.checklogin)
 
 // forgot password
 user_route.get('/forget',auth.isLogout,userController.forgetLoad)
@@ -41,21 +42,17 @@ user_route.get('/contact',userController.loadContact)
 user_route.get('/otp',userController.LoadOtp)
 user_route.post("/otp",userController.sendOtp);
 user_route.post('/verifyOtp',userController.verifyOtp);
-// user_route.post('/login',userController.verifyLogin);
-
-// user product list
 
 user_route.get('/productlist/:categoryId',auth.blockCheck,userController.productlist);
 user_route.get('/productdetail/:productId',auth.blockCheck,userController.productDetail);
 user_route.get('/shopPage',auth.blockCheck,userController.shopPage)
 user_route.post("/sortProduct", userController.sortProduct);
 
-
 // load cart
 
 user_route.get('/loadCart',auth.blockCheck,auth.isLogin,userController.loadCart)
 user_route.post('/cartUpdation',auth.isLogin,userController.updateCart)
-user_route.get('/addToCart',auth.blockCheck,auth.isLogin, userController.addToCart)
+user_route.get('/addToCart',auth.blockCheck,auth.isLogin,userController.addToCart)
 user_route.get('/deleteCartProduct/:productId',userController.deleteCartProduct)
 
 // checkout page
@@ -74,11 +71,9 @@ user_route.get('/checkStock',auth.isLogin,userController.checkStock)
 user_route.post('/placeOrder',auth.isLogin,userController.placeOrder)
 user_route.get('/orderConfirmation',userController.orderConfirmation)
 user_route.post('/validateCoupon',couponController.validateCoupon)
-// user_route.get('/downloadInvoice',auth.blockCheck, auth.isLogin,userController.downloadInvoice)
-// user_route.get('/invoice',userController.invoice)
+user_route.get('/downloadInvoice',auth.blockCheck, auth.isLogin,userController.downloadInvoice)
+user_route.get('/invoice',userController.invoice)
 
-
-// user_route.get('/addToPayment',auth.isLogin,userController.addToPayment)
 
 //whishlist
 
@@ -90,20 +85,6 @@ user_route.get('/removeWishlist',auth.blockCheck, auth.isLogin ,userController.r
 //404
 
 user_route.get('/load404',userController.load404)
-
-// (req, res) => {
-  
-  
-//     const categoryId = req.params.categoryId;
-//     // Handle the categoryId parameter and perform the necessary logic
-  
-//     // Example response
-//     res.send(`Category ID: ${categoryId}`);
-//   });
-
-
-
-
 
 
 

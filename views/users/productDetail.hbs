@@ -7,7 +7,7 @@
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Furnitica - Minimalist Furniture HTML Template</title>
+    <title>Furnitica</title>
 
     <meta name="keywords" content="Furniture, Decor, Interior">
     <meta name="description" content="Furnitica - Minimalist Furniture HTML Template">
@@ -51,7 +51,8 @@
                 <!-- logo -->
                 <div class="mobile-logo">
                     <a href="index-2.html">
-                        <img class="logo-mobile img-fluid" src="/img/homelogo.png" alt="Prestashop_Furnitica">
+                        <img class="logo-mobile img-fluid" src="/img/homelogo.png" alt="Prestashop_Furnitica"
+                            style="width:14rem;height:2rem;mix-blend-mode: darken;">
                     </a>
                 </div>
 
@@ -75,50 +76,8 @@
                 <div class="desktop_cart">
                     <div class="blockcart block-cart cart-preview tiva-toggle">
                         <div class="header-cart tiva-toggle-btn">
-                            <span class="cart-products-count">1</span>
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                        </div>
-                        <div class="dropdown-content">
-                            <div class="cart-content">
-                                <table>
-                                    <tbody>
-                                        <tr>
-                                            <td class="product-image">
-                                                <a href="product-detail.html">
-                                                    <img src="img/product/5.jpg" alt="Product">
-                                                </a>
-                                            </td>
-                                            <td>
-                                                <div class="product-name">
-                                                    <a href="product-detail.html">Organic Strawberry Fruits</a>
-                                                </div>
-                                                <div>
-                                                    2 x
-                                                    <span class="product-price">£28.98</span>
-                                                </div>
-                                            </td>
-                                            <td class="action">
-                                                <a class="remove" href="#">
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr class="total">
-                                            <td colspan="2">Total:</td>
-                                            <td>£92.96</td>
-                                        </tr>
 
-                                        <tr>
-                                            <td colspan="3" class="d-flex justify-content-center">
-                                                <div class="cart-button">
-                                                    <a href="/loadCart" title="View Cart">View Cart</a>
-                                                    <a href="/checkOut" title="Checkout">Checkout</a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                            <a href="/loadCart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
@@ -149,7 +108,7 @@
                                     <a href="#" class="parent">CATEGORY</a>
                                     <div class="dropdown-menu">
                                         <ul>
-                                            {{#each Data}}
+                                            {{#each cateData}}
                                             <li class="item">
                                                 <a href="/productlist/{{this._id}}">{{this.category}}</a>
                                             </li>
@@ -208,15 +167,13 @@
                                         </a>
                                     </div>
                                     <div>
-                                        <a class="register" href="/register" rel="nofollow"
-                                            title="Register Account">
+                                        <a class="register" href="/register" rel="nofollow" title="Register Account">
                                             <i class="fa fa-user"></i>
                                             <span>Register Account</span>
                                         </a>
                                     </div>
                                     <div>
-                                        <a class="check-out" href="/checkOut" rel="nofollow"
-                                            title="Checkout">
+                                        <a class="check-out" href="/checkOut" rel="nofollow" title="Checkout">
                                             <i class="fa fa-check" aria-hidden="true"></i>
                                             <span>Checkout</span>
                                         </a>
@@ -227,99 +184,17 @@
                                             <span>My Wishlists</span>
                                         </a>
                                     </div>
-                                    <div id="desktop_currency_selector"
-                                        class="currency-selector groups-selector hidden-sm-down">
-                                        <ul class="list-inline">
-                                            <li>
-                                                <a title="Euro" rel="nofollow" href="#">EUR</a>
-                                            </li>
-                                            <li class="current list-inline-item">
-                                                <a title="British Pound Sterling" rel="nofollow" href="#">GBP</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div id="desktop_language_selector"
-                                        class="language-selector groups-selector hidden-sm-down">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-itemcurrent">
-                                                <a href="#">
-                                                    <img class="img-fluid" src="img/home/home1-flas.jpg" alt="English"
-                                                        width="16" height="11">
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="#">
-                                                    <img class="img-fluid" src="img/home/home1-flas2.jpg" alt="Italiano"
-                                                        width="16" height="11">
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="#">
-                                                    <img class="img-fluid" src="img/home/home1-flas3.jpg" alt="Français"
-                                                        width="16" height="11">
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="#">
-                                                    <img class="img-fluid" src="img/home/home1-flas4.jpg" alt="Español"
-                                                        width="16" height="11">
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
+
+
                                 </div>
                             </div>
                         </div>
                         <div class="desktop_cart">
                             <div class="blockcart block-cart cart-preview tiva-toggle">
                                 <div class="header-cart tiva-toggle-btn">
-                                    <span class="cart-products-count">1</span>
-                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                </div>
-                                <div class="dropdown-content">
-                                    <div class="cart-content">
-                                        <table>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="product-image">
-                                                        <a href="product-detail.html">
-                                                            <img src="img/product/5.jpg" alt="Product">
-                                                        </a>
-                                                    </td>
-                                                    <td>
-                                                        <div class="product-name">
-                                                            <a href="product-detail.html">Organic Strawberry Fruits</a>
-                                                        </div>
-                                                        <div>
-                                                            2 x
-                                                            <span class="product-price">£28.98</span>
-                                                        </div>
-                                                    </td>
-                                                    <td class="action">
-                                                        <a class="remove" href="#">
-                                                            <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr class="total">
-                                                    <td colspan="2">Total:</td>
-                                                    <td>£92.96</td>
-                                                </tr>
 
-                                                <tr>
-                                                    <td colspan="3" class="d-flex justify-content-center">
-                                                        <div class="cart-button">
-                                                            <a href="/loadCart" title="View Cart">View Cart</a>
-                                                            <a href="product-checkout.html"
-                                                                title="Checkout">Checkout</a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                    <a href="/loadCart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -363,333 +238,6 @@
                             <div class="content">
                                 <div class="row">
                                     <div class="sidebar-3 sidebar-collection col-lg-3 col-md-3 col-sm-4">
-
-                                        <!-- category -->
-                                        {{!-- <div class="sidebar-block">
-                                            <div class="title-block">Categories</div>
-                                            <div class="block-content">
-                                                <div class="cateTitle hasSubCategory open level1">
-                                                    <span class="arrow collapse-icons collapsed" data-toggle="collapse"
-                                                        data-target="#livingroom">
-                                                        <i class="zmdi zmdi-minus"></i>
-                                                        <i class="zmdi zmdi-plus"></i>
-                                                    </span>
-                                                    <a class="cateItem" href="#">Living Room</a>
-                                                    <div class="subCategory collapse" id="livingroom"
-                                                        aria-expanded="true" role="status">
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">Side Table</a>
-                                                            <div class="subCategory collapse" id="subCategory-fruits"
-                                                                aria-expanded="true" role="status">
-                                                                <div class="cateTitle">
-                                                                    <a href="#" class="cateItem">Side Table</a>
-                                                                </div>
-                                                                <div class="cateTitle">
-                                                                    <a href="#" class="cateItem">FIREPLACE</a>
-                                                                </div>
-                                                                <div class="cateTitle">
-                                                                    <a href="#" class="cateItem">FIREPLACE</a>
-                                                                </div>
-                                                                <div class="cateTitle">
-                                                                    <a href="#" class="cateItem">floor lamp</a>
-                                                                </div>
-                                                                <div class="cateTitle">
-                                                                    <a href="#" class="cateItem">ottoman</a>
-                                                                </div>
-                                                                <div class="cateTitle">
-                                                                    <a href="#" class="cateItem">armchair</a>
-                                                                </div>
-                                                                <div class="cateTitle">
-                                                                    <a href="#" class="cateItem">cushion</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">FIREPLACE</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">FIREPLACE</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">floor lamp</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">ottoman</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">armchair</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">cushion</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="cateTitle hasSubCategory open level1">
-                                                    <span class="arrow collapsed collapse-icons" data-toggle="collapse"
-                                                        data-target="#bathroom">
-                                                        <i class="zmdi zmdi-minus"></i>
-                                                        <i class="zmdi zmdi-plus"></i>
-                                                    </span>
-                                                    <a class="cateItem" href="#">Bathroom</a>
-                                                    <div class="subCategory collapse" id="bathroom">
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">TOMATO</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">BROCCOLI</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">CABBAGE</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">CUCUMBER</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">EGGPLANT</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="cateTitle hasSubCategory open level1">
-                                                    <span class="arrow collapsed collapse-icons" data-toggle="collapse"
-                                                        data-target="#diningroom">
-                                                        <i class="zmdi zmdi-minus"></i>
-                                                        <i class="zmdi zmdi-plus"></i>
-                                                    </span>
-                                                    <a class="cateItem" href="#">Dining Rooom</a>
-                                                    <div class="subCategory collapse" id="diningroom"
-                                                        aria-expanded="true" role="status">
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">DRY BREAD</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">BREAD SLICES</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">FRENCH BREAD</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">BLACK BREAD</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="cateTitle hasSubCategory open level1">
-                                                    <span class="arrow collapsed collapse-icons" data-toggle="collapse"
-                                                        data-target="#bedroom">
-                                                        <i class="zmdi zmdi-minus"></i>
-                                                        <i class="zmdi zmdi-plus"></i>
-                                                    </span>
-                                                    <a class="cateItem" href="#">BedRoom</a>
-                                                    <div class="subCategory collapse" id="bedroom" aria-expanded="true"
-                                                        role="status">
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">ORANGE JUICES</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">TOMATO JUICES</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">APPLE JUICES</a>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                                <div class="cateTitle hasSubCategory open level1">
-                                                    <span class="arrow collapsed collapse-icons" data-toggle="collapse"
-                                                        data-target="#kitchen">
-                                                        <i class="zmdi zmdi-minus"></i>
-                                                        <i class="zmdi zmdi-plus"></i>
-                                                    </span>
-                                                    <a class="cateItem" href="#">Kitchen</a>
-                                                    <div class="subCategory collapse" id="kitchen" aria-expanded="true"
-                                                        role="status">
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">ORANGE JUICES</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">TOMATO JUICES</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">APPLE JUICES</a>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> --}}
-
-                                        <!-- best seller -->
-                                        {{!-- <div class="sidebar-block">
-                                            <div class="title-block">
-                                                Best seller
-                                            </div>
-                                            <div class="product-content tab-content">
-                                                <div class="row">
-                                                    <div class="item col-md-12">
-                                                        <div class="product-miniature item-one first-item d-flex">
-                                                            <div class="thumbnail-container border">
-                                                                <a href="product-detail.html">
-                                                                    <img class="img-fluid image-cover"
-                                                                        src="img/product/1.jpg" alt="img">
-                                                                    <img class="img-fluid image-secondary"
-                                                                        src="img/product/22.jpg" alt="img">
-                                                                </a>
-                                                            </div>
-                                                            <div class="product-description">
-                                                                <div class="product-groups">
-                                                                    <div class="product-title">
-                                                                        <a href="product-detail.html">Nulla et justo
-                                                                            augue</a>
-                                                                    </div>
-                                                                    <div class="rating">
-                                                                        <div class="star-content">
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="product-group-price">
-                                                                        <div class="product-price-and-shipping">
-                                                                            <span class="price">£28.08</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item col-md-12">
-                                                        <div class="product-miniature item-one first-item d-flex">
-                                                            <div class="thumbnail-container border">
-                                                                <a href="product-detail.html">
-                                                                    <img class="img-fluid image-cover"
-                                                                        src="img/product/2.jpg" alt="img">
-                                                                    <img class="img-fluid image-secondary"
-                                                                        src="img/product/11.jpg" alt="img">
-                                                                </a>
-                                                            </div>
-                                                            <div class="product-description">
-                                                                <div class="product-groups">
-                                                                    <div class="product-title">
-                                                                        <a href="product-detail.html">Nulla et justo
-                                                                            augue</a>
-                                                                    </div>
-                                                                    <div class="rating">
-                                                                        <div class="star-content">
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="product-group-price">
-                                                                        <div class="product-price-and-shipping">
-                                                                            <span class="price">£31.08</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item col-md-12">
-                                                        <div class="product-miniature item-one first-item d-flex">
-                                                            <div class="thumbnail-container border">
-                                                                <a href="product-detail.html">
-                                                                    <img class="img-fluid image-cover"
-                                                                        src="img/product/3.jpg" alt="img">
-                                                                    <img class="img-fluid image-secondary"
-                                                                        src="img/product/14.jpg" alt="img">
-                                                                </a>
-                                                            </div>
-                                                            <div class="product-description">
-                                                                <div class="product-groups">
-                                                                    <div class="product-title">
-                                                                        <a href="product-detail.html">Nulla et justo
-                                                                            augue</a>
-                                                                    </div>
-                                                                    <div class="rating">
-                                                                        <div class="star-content">
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="product-group-price">
-                                                                        <div class="product-price-and-shipping">
-                                                                            <span class="price">£20.08</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div> --}}
-                                        <!-- product tag -->
-                                        {{!-- <div class="sidebar-block product-tags">
-                                            <div class="title-block">
-                                                Product Tags
-                                            </div>
-                                            <div class="block-content">
-                                                <ul class="listSidebarBlog list-unstyled">
-                                                    <li>
-                                                        <a href="#" title="Show products matching tag Hot Trend">Hot
-                                                            Trend</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="#"
-                                                            title="Show products matching tag Jewelry">Jewelry</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="man.html"
-                                                            title="Show products matching tag Man">Man</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="#" title="Show products matching tag Party">Party</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="#"
-                                                            title="Show products matching tag SamSung">SamSung</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="#"
-                                                            title="Show products matching tag Shirt Dresses">Shirt
-                                                            Dresses</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="#" title="Show products matching tag Shoes">Shoes</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="#" title="Show products matching tag Summer">Summer</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="#"
-                                                            title="Show products matching tag Sweaters">Sweaters</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="#" title="Show products matching tag Winter">Winter</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="#" title="Show products matching tag Woman">Woman</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div> --}}
                                     </div>
                                     <div class="col-sm-8 col-lg-9 col-md-9">
                                         <div class="main-product-detail">
@@ -742,24 +290,6 @@
                                                                         </a>
                                                                     </li>
                                                                 </ul>
-
-                                                                {{!-- <li class="active col">
-                                                                    <a href="#item1" data-toggle="tab"
-                                                                        aria-expanded="true" class="active show">
-                                                                        <img src="/uploads/{{productData.images}}"
-                                                                            alt="img">
-                                                                    </a>
-                                                                </li>
-                                                                <li class="col">
-                                                                    <a href="#item2" data-toggle="tab">
-                                                                        <img src="/img/product/2.jpg" alt="img">
-                                                                    </a>
-                                                                </li>
-                                                                <li class="col">
-                                                                    <a href="#item3" data-toggle="tab">
-                                                                        <img src="/img/product/3.jpg" alt="img">
-                                                                    </a>
-                                                                </li> --}}
                                                             </ul>
                                                             <div class="modal fade" id="product-modal" role="dialog">
                                                                 <div class="modal-dialog">
@@ -792,38 +322,7 @@
                                                                                                 </div>
 
                                                                                             </div>
-                                                                                            {{!-- <ul 
-                                                                                                class="product-tab nav nav-tabs">
-                                                                                                <li class="active">
-                                                                                                    <a href="#modal-item1"
-                                                                                                        data-toggle="tab"
-                                                                                                        class=" active show">
-                                                                                                        <img src="img/product/1.jpg"
-                                                                                                            alt="img">
-                                                                                                    </a>
-                                                                                                </li>
-                                                                                                <li>
-                                                                                                    <a href="#modal-item2"
-                                                                                                        data-toggle="tab">
-                                                                                                        <img src="img/product/2.jpg"
-                                                                                                            alt="img">
-                                                                                                    </a>
-                                                                                                </li>
-                                                                                                <li>
-                                                                                                    <a href="#modal-item3"
-                                                                                                        data-toggle="tab">
-                                                                                                        <img src="img/product/3.jpg"
-                                                                                                            alt="img">
-                                                                                                    </a>
-                                                                                                </li>
-                                                                                                <li>
-                                                                                                    <a href="#modal-item4"
-                                                                                                        data-toggle="tab">
-                                                                                                        <img src="img/product/5.jpg"
-                                                                                                            alt="img">
-                                                                                                    </a>
-                                                                                                </li>
-                                                                                            </ul> --}}
+                                                                                            
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -857,15 +356,7 @@
                                                                     <option value="">xl</option>
                                                                 </select>
                                                             </div>
-                                                            {{!-- <div class="colors">
-                                                                <b class="title">Color : </b>
-                                                                <span class="blue"></span>
-                                                                <span class="yellow"></span>
-                                                                <span class="pink"></span>
-                                                                <span class="green"></span>
-                                                                <span class="brown"></span>
-                                                                <span class="red"></span>
-                                                            </div> --}}
+                                                           
                                                         </div>
                                                         <div class="has-border cart-area">
                                                             <div class="product-quantity">
@@ -875,15 +366,16 @@
                                                                             <span class="control-label">QTY : </span>
                                                                             <input type="number" name="qty"
                                                                                 id="{{productId}}" value=1
-                                                                                class="input-group form-control" readonly/>
+                                                                                class="input-group form-control"
+                                                                                readonly />
 
                                                                             <span class="input-group-btn-vertical">
                                                                                 <button
                                                                                     onclick="productQuantity('{{productId}}','inc')"
                                                                                     class="btn btn-touchspin js-touchspin bootstrap-touchspin-up"
-                                                                                    type="button" >
+                                                                                    type="button">
                                                                                     +
-                                                                                </button >
+                                                                                </button>
 
                                                                                 {{!-- <input disabled type="number"
                                                                                     id="{{productId}}"
@@ -980,10 +472,6 @@
                                                                                             {{/if}}
                                                                                             {{else}} --}}
 
-
-
-
-
                                                                                             <button id="addToCartBtn"
                                                                                                 class="btn btn-primary add-to-cart add-item"
                                                                                                 data-button-action="add-to-cart"
@@ -992,22 +480,6 @@
                                                                                                     aria-hidden="true"></i>
                                                                                                 <span>Add to cart</span>
                                                                                             </button>
-
-
-                                                                                            {{!-- {{/if}}
-                                                                                            {{else}}
-                                                                                            <a href="">
-                                                                                                <button
-                                                                                                    class="btn btn-primary add-to-cart add-item"
-                                                                                                    data-button-action="add-to-cart"
-                                                                                                    type="submit">
-                                                                                                    <i class="fa fa-shopping-cart"
-                                                                                                        aria-hidden="true"></i>
-                                                                                                    <span>Out Of
-                                                                                                        Stock</span>
-                                                                                                </button>
-                                                                                            </a>
-                                                                                            {{/if}} --}}
 
                                                                                             <button
                                                                                                 onclick="addToWishlist('{{productData._id}}','{{cartId}}')">
@@ -1057,43 +529,13 @@
                                                                 </div>
                                                             </div>
                                                             <div class="read after-has-border">
-                                                                <a href="#review">
-                                                                    <i class="fa fa-commenting-o color"
-                                                                        aria-hidden="true"></i>
-                                                                    <span>READ REVIEWS (3)</span>
-                                                                </a>
+
                                                             </div>
                                                             <div class="apen after-has-border">
-                                                                <a href="#review">
-                                                                    <i class="fa fa-pencil color"
-                                                                        aria-hidden="true"></i>
-                                                                    <span>WRITE A REVIEW</span>
-                                                                </a>
+
                                                             </div>
                                                         </div>
-                                                        {{!-- <div class="content">
-                                                            <p>SKU :
-                                                                <span class="content2">
-                                                                    <a href="#">e-02154</a>
-                                                                </span>
-                                                            </p>
-                                                            <p>Categories :
-                                                                <span class="content2">
-                                                                    <a href="#">Clothing</a>,
-                                                                    <a href="#">Men's Jackets</a>
-                                                                </span>
-                                                            </p>
-                                                            <p>tags :
-                                                                <span class="content2">
-                                                                    <a href="#">Jacket</a>,
-                                                                    <a href="#">Overcoat</a>,
-                                                                    <a href="#">Luxury</a>,
-                                                                    <a href="#">men</a>,
-                                                                    <a href="#">summer</a>,
-                                                                    <a href="#">autumn</a>
-                                                                </span>
-                                                            </p>
-                                                        </div> --}}
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -1103,12 +545,6 @@
                                                     <li class="active">
                                                         <a data-toggle="tab" href="#description"
                                                             class="active show">Description</a>
-                                                    </li>
-                                                    <li>
-                                                        <a data-toggle="tab" href="#tag">Product Tags</a>
-                                                    </li>
-                                                    <li>
-                                                        <a data-toggle="tab" href="#review">Reviews (2)</a>
                                                     </li>
                                                 </ul>
 
@@ -1284,212 +720,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="related">
-                                                <div class="title-tab-content  text-center">
-                                                    <div class="title-product justify-content-start">
-                                                        <h2>Related Products</h2>
-                                                    </div>
-                                                </div>
-                                                <div class="tab-content">
-                                                    <div class="row">
-                                                        <div class="item text-center col-md-4">
-                                                            <div
-                                                                class="product-miniature js-product-miniature item-one first-item">
-                                                                <div class="thumbnail-container border border">
-                                                                    <a href="product-detail.html">
-                                                                        <img class="img-fluid image-cover"
-                                                                            src="img/product/1.jpg" alt="img">
-                                                                        <img class="img-fluid image-secondary"
-                                                                            src="img/product/22.jpg" alt="img">
-                                                                    </a>
-                                                                    <div class="highlighted-informations">
-                                                                        <div class="variant-links">
-                                                                            <a href="#" class="color beige"
-                                                                                title="Beige"></a>
-                                                                            <a href="#" class="color orange"
-                                                                                title="Orange"></a>
-                                                                            <a href="#" class="color green"
-                                                                                title="Green"></a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="product-description">
-                                                                    <div class="product-groups">
-                                                                        <div class="product-title">
-                                                                            <a href="product-detail.html">Nulla et justo
-                                                                                non augue</a>
-                                                                        </div>
-                                                                        <div class="rating">
-                                                                            <div class="star-content">
-                                                                                <div class="star"></div>
-                                                                                <div class="star"></div>
-                                                                                <div class="star"></div>
-                                                                                <div class="star"></div>
-                                                                                <div class="star"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="product-group-price">
-                                                                            <div class="product-price-and-shipping">
-                                                                                <span class="price">£28.08</span>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div
-                                                                        class="product-buttons d-flex justify-content-center">
-                                                                        <form action="#" method="post"
-                                                                            class="formAddToCart">
-                                                                            <a class="add-to-cart" href="#"
-                                                                                data-button-action="add-to-cart">
-                                                                                <i class="fa fa-shopping-cart"
-                                                                                    aria-hidden="true"></i>
-                                                                            </a>
-                                                                        </form>
-                                                                        <a class="addToWishlist" href="#" data-rel="1"
-                                                                            onclick="">
-                                                                            <i class="fa fa-heart"
-                                                                                aria-hidden="true"></i>
-                                                                        </a>
-                                                                        <a href="#" class="quick-view hidden-sm-down"
-                                                                            data-link-action="quickview">
-                                                                            <i class="fa fa-eye" aria-hidden="true"></i>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="item text-center col-md-4">
-                                                            <div
-                                                                class="product-miniature js-product-miniature item-one first-item">
-                                                                <div class="thumbnail-container border">
-                                                                    <a href="product-detail.html">
-                                                                        <img class="img-fluid image-cover"
-                                                                            src="img/product/2.jpg" alt="img">
-                                                                        <img class="img-fluid image-secondary"
-                                                                            src="img/product/11.jpg" alt="img">
-                                                                    </a>
-                                                                    <div class="highlighted-informations">
-                                                                        <div class="variant-links">
-                                                                            <a href="#" class="color beige"
-                                                                                title="Beige"></a>
-                                                                            <a href="#" class="color orange"
-                                                                                title="Orange"></a>
-                                                                            <a href="#" class="color green"
-                                                                                title="Green"></a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="product-description">
-                                                                    <div class="product-groups">
-                                                                        <div class="product-title">
-                                                                            <a href="product-detail.html">Nulla et justo
-                                                                                non augue</a>
-                                                                        </div>
-                                                                        <div class="rating">
-                                                                            <div class="star-content">
-                                                                                <div class="star"></div>
-                                                                                <div class="star"></div>
-                                                                                <div class="star"></div>
-                                                                                <div class="star"></div>
-                                                                                <div class="star"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="product-group-price">
-                                                                            <div class="product-price-and-shipping">
-                                                                                <span class="price">£31.08</span>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div
-                                                                        class="product-buttons d-flex justify-content-center">
-                                                                        <form action="#" method="post"
-                                                                            class="formAddToCart">
-                                                                            <a class="add-to-cart" href="#"
-                                                                                data-button-action="add-to-cart">
-                                                                                <i class="fa fa-shopping-cart"
-                                                                                    aria-hidden="true"></i>
-                                                                            </a>
-                                                                        </form>
-                                                                        <a class="addToWishlist" href="#" data-rel="1"
-                                                                            onclick="">
-                                                                            <i class="fa fa-heart"
-                                                                                aria-hidden="true"></i>
-                                                                        </a>
-                                                                        <a href="#" class="quick-view hidden-sm-down"
-                                                                            data-link-action="quickview">
-                                                                            <i class="fa fa-eye" aria-hidden="true"></i>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="item text-center col-md-4">
-                                                            <div
-                                                                class="product-miniature js-product-miniature item-one first-item">
-                                                                <div class="thumbnail-container border">
-                                                                    <a href="product-detail.html">
-                                                                        <img class="img-fluid image-cover"
-                                                                            src="img/product/3.jpg" alt="img">
-                                                                        <img class="img-fluid image-secondary"
-                                                                            src="img/product/14.jpg" alt="img">
-                                                                    </a>
-                                                                    <div class="highlighted-informations">
-                                                                        <div class="variant-links">
-                                                                            <a href="#" class="color beige"
-                                                                                title="Beige"></a>
-                                                                            <a href="#" class="color orange"
-                                                                                title="Orange"></a>
-                                                                            <a href="#" class="color green"
-                                                                                title="Green"></a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="product-description">
-                                                                    <div class="product-groups">
-                                                                        <div class="product-title">
-                                                                            <a href="product-detail.html">Nulla et justo
-                                                                                non augue</a>
-                                                                        </div>
-                                                                        <div class="rating">
-                                                                            <div class="star-content">
-                                                                                <div class="star"></div>
-                                                                                <div class="star"></div>
-                                                                                <div class="star"></div>
-                                                                                <div class="star"></div>
-                                                                                <div class="star"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="product-group-price">
-                                                                            <div class="product-price-and-shipping">
-                                                                                <span class="price">£20.08</span>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div
-                                                                        class="product-buttons d-flex justify-content-center">
-                                                                        <form action="#" method="post"
-                                                                            class="formAddToCart">
-                                                                            <a class="add-to-cart" href="#"
-                                                                                data-button-action="add-to-cart">
-                                                                                <i class="fa fa-shopping-cart"
-                                                                                    aria-hidden="true"></i>
-                                                                            </a>
-                                                                        </form>
-                                                                        <a class="addToWishlist" href="#" data-rel="1"
-                                                                            onclick="">
-                                                                            <i class="fa fa-heart"
-                                                                                aria-hidden="true"></i>
-                                                                        </a>
-                                                                        <a href="#" class="quick-view hidden-sm-down"
-                                                                            data-link-action="quickview">
-                                                                            <i class="fa fa-eye" aria-hidden="true"></i>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -1695,515 +926,7 @@
     </div>
 
     <!-- menu mobie left -->
-    <div class="mobile-top-menu d-md-none">
-        <button type="button" class="close" aria-label="Close">
-            <i class="zmdi zmdi-close"></i>
-        </button>
-        <div id="desktop_verticalmenu" class="tiva-verticalmenu block" data-count_showmore="17">
-            <div class="box-content block-content">
-                <div class="verticalmenu" role="navigation">
-                    <ul class="menu level1">
-                        <li class="item  parent">
-                            <a href="#" class="hasicon" title="SIDE TABLE">
-                                <img src="img/home/table-lamp.png" alt="img">SIDE TABLE</a>
-                            <span class="arrow collapsed" data-toggle="collapse" data-target="#SIDE-TABLE">
-                                <i class="zmdi zmdi-minus"></i>
-                                <i class="zmdi zmdi-plus"></i>
-                            </span>
-                            <div class="subCategory collapse" id="SIDE-TABLE" aria-expanded="true" role="status">
-                                <ul>
-                                    <li class="item">
-                                        <a href="#" title="Aliquam lobortis">Aliquam lobortis</a>
-                                    </li>
-                                    <li class="item  parent-submenu">
-                                        <a href="#" title="Duis Reprehenderit">Duis Reprehenderit</a>
-                                        <span class="arrow collapsed" data-toggle="collapse"
-                                            data-target="#sub-Category">
-                                            <i class="zmdi zmdi-minus"></i>
-                                            <i class="zmdi zmdi-plus"></i>
-                                        </span>
-                                        <div class="subCategory collapse" id="sub-Category" aria-expanded="true"
-                                            role="status">
-                                            <ul>
-                                                <li class="item">
-                                                    <a href="#" title="Aliquam lobortis">Aliquam lobortis</a>
-                                                </li>
-                                                <li class="item">
-                                                    <a href="#" title="Duis Reprehenderit">Duis Reprehenderit</a>
-                                                </li>
-                                                <li class="item">
-                                                    <a href="#" title="Voluptate">Voluptate</a>
-                                                </li>
-                                                <li class="item">
-                                                    <a href="#" title="Tongue Est">Tongue Est</a>
-                                                </li>
-                                                <li class="item">
-                                                    <a href="#" title="Venison Andouille">Venison Andouille</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="item">
-                                        <a href="#" title="Voluptate">Voluptate</a>
-                                    </li>
-                                    <li class="item">
-                                        <a href="#" title="Tongue Est">Tongue Est</a>
-                                    </li>
-                                    <li class="item">
-                                        <a href="#" title="Venison Andouille">Venison Andouille</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="item  parent group">
-                            <a href="#" class="hasicon" title="FI">
-                                <img src="img/home/fireplace.png" alt="img">FIREPLACE
-                            </a>
-                            <span class="arrow collapsed" data-toggle="collapse" data-target="#fi">
-                                <i class="zmdi zmdi-minus"></i>
-                                <i class="zmdi zmdi-plus"></i>
-                            </span>
-                            <div class="subCategory collapse" id="fi" aria-expanded="true" role="status">
-                                <div class="item">
-                                    <div class="menu-content">
-                                        <div class="tags d-flex d-xs-flex-inherit">
-                                            <div class="title">
-                                                <b>DINNING ROOM</b>
-                                            </div>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <a href="#">Toshiba</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Samsung</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">LG</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Sharp</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Electrolux</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Hitachi</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Panasonic</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Mitsubishi Electric</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Daikin</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Haier</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="tags d-flex d-xs-flex-inherit">
-                                            <div class="title">
-                                                <b>BATHROOM</b>
-                                            </div>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <a href="#">Toshiba</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Samsung</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">LG</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Sharp</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Electrolux</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Hitachi</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Panasonic</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Mitsubishi Electric</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Daikin</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Haier Media</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Gee</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Digimart</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Vitivaa</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Sanaky</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Sunshine</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="tags d-flex d-xs-flex-inherit">
-                                            <div class="title">
-                                                <b>LIVING ROOM</b>
-                                            </div>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <a href="#">Media</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Gee</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Digimart</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Vitivaa</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Sanaky</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Sunshine</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Toshiba</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Samsung</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">LG</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Sharp</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Electrolux</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Hitachi</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Panasonic</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Mitsubishi Electric</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Daikin</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Haier</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="tags d-flex d-xs-flex-inherit">
-                                            <div class="title">
-                                                <b>BEDROOM</b>
-                                            </div>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <a href="#">LG</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Sharp</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Electrolux</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Hitachi</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Panasonic</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Mitsubishi Electric</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Daikin</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Haier</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="tags d-flex d-xs-flex-inherit">
-                                            <div class="title">
-                                                <b>KITCHEN</b>
-                                            </div>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <a href="#">LG</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Sharp</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Electrolux</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Hitachi</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Panasonic</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Mitsubishi Electric</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Daikin</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Haier</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="tags d-flex d-xs-flex-inherit">
-                                            <div class="title">
-                                                <b>Blender</b>
-                                            </div>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <a href="#">LG</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Sharp</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Electrolux</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Hitachi</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Panasonic</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Mitsubishi Electric</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Daikin</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Haier</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="item group-category-img parent group">
-                            <a href="#" class="hasicon" title="TABLE LAMP">
-                                <img src="img/home/table-lamp.png" alt="img">TABLE LAMP</a>
-                            <span class="arrow collapsed" data-toggle="collapse" data-target="#table-lamp">
-                                <i class="zmdi zmdi-minus"></i>
-                                <i class="zmdi zmdi-plus"></i>
-                            </span>
-                            <div class="subCategory collapse" id="table-lamp" aria-expanded="true" role="status">
-                                <div class="item">
-                                    <div class="menu-content">
-                                        <div class="col-xs-12">
-                                            <span class="menu-title">Coventry dining</span>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">Accessories</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Activewear</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">ASOS Basic Tops</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Bags &amp; Purses</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Beauty</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Coats &amp; Jackets</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Curve &amp; Plus Size</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-xs-12">
-                                            <span class="menu-title">Amara stools</span>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">Accessories</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Activewear</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">ASOS Basic Tops</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Bags &amp; Purses</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Beauty</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Coats &amp; Jackets</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Curve &amp; Plus Size</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-xs-12">
-                                            <span class="menu-title">Kingston dining</span>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">Accessories</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Activewear</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">ASOS Basic Tops</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Bags &amp; Purses</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Beauty</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Coats &amp; Jackets</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Curve &amp; Plus Size</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-xs-12">
-                                            <span class="menu-title">Ellinger dining</span>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">Accessories</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Activewear</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">ASOS Basic Tops</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Bags &amp; Purses</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Beauty</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Coats &amp; Jackets</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Curve &amp; Plus Size</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="OTTOMAN">
-                                <img src="img/home/ottoman.png" alt="img">OTTOMAN
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="ARMCHAIR">
-                                <img src="img/home/armchair.png" alt="img">ARMCHAIR
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="CUSHION">
-                                <img src="img/home/cushion.png" alt="img">CUSHION
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="COFFEE TABLE">
-                                <img src="img/home/coffee_table.png" alt="img">COFFEE TABLE</a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="SHELF">
-                                <img src="img/home/shelf.png" alt="img">SHELF
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="SOFA">
-                                <img src="img/home/sofa.png" alt="img">SOFA
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="DRESSING TABLE">
-                                <img src="img/home/dressing.png" alt="img">DRESSING TABLE</a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="WINDOWN CURTAIN">
-                                <img src="img/home/windown.png" alt="img">WINDOWN CURTAIN</a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="CHANDELIER">
-                                <img src="img/home/chandelier.png" alt="img">CHANDELIER
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="CEILING FAN">
-                                <img src="img/home/ceiling_fan.png" alt="img">CEILING FAN</a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="WARDROBE">
-                                <img src="img/home/wardrobe.png" alt="img">WARDROBE
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="FLOOR LAMP">
-                                <img src="img/home/floor_lamp.png" alt="img">FLOOR LAMP</a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="VASE-FLOWER ">
-                                <img src="img/home/vase-flower.png" alt="img">VASE-FLOWER
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="BED">
-                                <img src="img/home/bed.png" alt="img">BED
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="BED GIRL">
-                                <img src="img/home/bed.png" alt="img">BED GIRL</a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="BED BOY">
-                                <img src="img/home/bed.png" alt="img">BED BOY</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-    </div>
+    
 
     <!-- menu mobie right -->
     <div id="mobile-pagemenu" class="mobile-boxpage d-flex hidden-md-up active d-md-none">
@@ -2221,29 +944,11 @@
                                 <span class="arrow collapsed" data-toggle="collapse" data-target="#home1"
                                     aria-expanded="true" role="status">
                                     <i class="zmdi zmdi-minus"></i>
-                                    <i class="zmdi zmdi-plus"></i>
+                                    <a href="/"> <i class="zmdi zmdi-plus"></i></a>
+
                                 </span>
-                                <a href="index-2.html" title="Home">
+                                <a href="#" title="Home">
                                     <i class="fa fa-home" aria-hidden="true"></i>Home</a>
-                                <div class="subCategory collapse" id="home1" aria-expanded="true" role="status">
-                                    <ul>
-                                        <li class="item">
-                                            <a href="index-2.html" title="Home Page 1">Home Page 1</a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="home2.html" title="Home Page 2">Home Page 2</a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="home3.html" title="Home Page 3">Home Page 3</a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="home4.html" title="Home Page 4">Home Page 4</a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="home5.html" title="Home Page 5">Home Page 5</a>
-                                        </li>
-                                    </ul>
-                                </div>
                             </li>
                             <li class="item has-sub">
                                 <span class="arrow collapsed" data-toggle="collapse" data-target="#blog"
@@ -2252,33 +957,16 @@
                                     <i class="zmdi zmdi-plus"></i>
                                 </span>
                                 <a href="#" title="Blog">
-                                    <i class="fa fa-address-book" aria-hidden="true"></i>Blog</a>
+                                    {{!-- <i class="fa fa-address-book" aria-hidden="true"></i>Category</a> --}}
+                                   <i class="fa fa-cubes"></i>Category</a>
 
                                 <div class="subCategory collapse" id="blog" aria-expanded="true" role="status">
                                     <ul>
+                                         {{#each cateData}}
                                         <li class="item">
-                                            <a href="blog-list-sidebar-left.html" title="Blog List (Sidebar Left)">Blog
-                                                List (Sidebar Left)</a>
+                                            <a href="/productlist/{{this._id}}">{{this.category}}</a>
                                         </li>
-                                        <li class="item">
-                                            <a href="blog-list-sidebar-left2.html"
-                                                title="Blog List (Sidebar Left) 2">Blog List (Sidebar Left) 2</a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="blog-list-sidebar-right.html"
-                                                title="Category Blog (Right column)">Blog List (Sidebar Right)</a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="blog-list-no-sidebar.html" title="Blog List (No Sidebar)">Blog List
-                                                (No Sidebar)</a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="blog-grid-no-sidebar.html" title="Blog Grid (No Sidebar)">Blog Grid
-                                                (No Sidebar)</a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="blog-detail.html" title="Blog Detail">Blog Detail</a>
-                                        </li>
+                                         {{/each}}
                                     </ul>
                                 </div>
                             </li>
@@ -2286,69 +974,15 @@
                                 <span class="arrow collapsed" data-toggle="collapse" data-target="#page"
                                     aria-expanded="false" role="status">
                                     <i class="zmdi zmdi-minus"></i>
-                                    <i class="zmdi zmdi-plus"></i>
+                                    <a href="/shopPage"><i class="zmdi zmdi-plus"></i></a>
+                                    
                                 </span>
                                 <a href="#" title="Page">
-                                    <i class="fa fa-file-text-o" aria-hidden="true"></i>page</a>
-                                <div class="subCategory collapse" id="page" aria-expanded="true" role="status">
-                                    <ul class="group-page">
-                                        <li class="item container group">
-                                            <div>
-                                                <ul>
-                                                    <li class="item col-md-4 ">
-                                                        <span class="menu-title">Category Style</span>
-                                                        <div class="menu-content">
-                                                            <ul class="col">
-                                                                <li>
-                                                                    <a href="product-grid-sidebar-left.html">Product
-                                                                        Grid (Sidebar Left)</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="product-grid-sidebar-right.html">Product
-                                                                        Grid (Sidebar Right)</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="product-list-sidebar-left.html">Product
-                                                                        List (Sidebar Left) </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                    <li class="item col-md-4 html">
-                                                        <span class="menu-title">Product Detail Style</span>
-                                                        <div class="menu-content">
-                                                            <ul>
-                                                                <li>
-                                                                    <a href="product-detail.html">Product Detail
-                                                                        (Sidebar Left)</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="#">Product Detail (Sidebar Right)</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                    <li class="item col-md-4 html">
-                                                        <span class="menu-title">Bonus Page</span>
-                                                        <div class="menu-content">
-                                                            <ul>
-                                                                <li>
-                                                                    <a href="404.html">404 Page</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="about-us.html">About Us Page</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
+                                    <i class="fa fa-file-text-o" aria-hidden="true"></i>shop</a>
+                                
                             </li>
                             <li class="item has-sub">
-                                <a href="contact.html" title="Contact us">
+                                <a href="/contact" title="Contact us">
                                     <i class="fa fa-map-marker" aria-hidden="true"></i>Contact us</a>
                             </li>
                         </ul>
@@ -2377,75 +1011,92 @@
 
         console.log('script tag and out side  add to cart')
         const addToCart = async (productId) => {
-            console.log(typeof (productId))
-            // const addToCartButton = document.getElementById("addToCartBtn");
-            //const productName = document.getElementsByName("productName")[0].value;
-            const quantity = document.getElementById(productId).value;
 
-            console.log(quantity, 2462)
+            const response = await fetch("/check-login");
+            const data = await response.json();
 
+            console.log(data, "rrrrrrrrrrrrrrrrrrrrrrrrrrr")
 
-            console.log('inside add to cart')
-            const response = await fetch(`/addToCart?id=${productId}&quantity=${quantity}`, {
-                method: "GET",
-                headers: {
-                    "content-Type": "application/json",
-                },
-            });
+            if (!data.loggedIn) {
 
-            let data = await response.json()
-
-            if (data.message === "Item already in cart!!") {
                 Swal.fire({
-                    position: "center",
-                    icon: "success",
-                    title: "Product is already in cart.\n So quantity increased",
+                    title: "Login Required",
+                    text: "Please login to add items to your cart.",
+                    icon: "info",
                     showConfirmButton: true,
-                    confirmButtonColor: "#00A300",
+                    confirmButtonText: "Login",
+                    showCancelButton: true,
+                    cancelButtonText: "Cancel",
+                }).then((result) => {
+                    if (result.isConfirmed) {
+
+                        window.location.href = "/login";
+                    }
                 });
             } else {
-                Swal.fire({
-                    position: "center",
-                    icon: "success",
-                    title: "Product successfully added to cart",
-                    showConfirmButton: true,
-                    confirmButtonColor: "#00A300",
-                });
-            }
-        };
 
-        const addToWishlist = async (productId, cartId) => {
-            const response = await fetch(`/addToWishlist?productId=${productId}&cartId=${cartId}`, {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            });
-
-            let data = await response.json();
-
-            if (data.message === "Added to wishlist") {
-                Swal.fire({
-                    position: "center",
-                    icon: "success",
-                    title: "Product added to wishlist",
-                    showConfirmButton: true,
-                    confirmButtonColor: "#00A300",
+                const quantity = document.getElementById(productId).value
+                const response = await fetch(`/addToCart?id=${productId}&quantity=${quantity}`, {
+                    method: "GET",
+                    headers: {
+                        "content-Type": "application/json",
+                    },
                 });
 
-                document.getElementById("row" + productId).innerHTML = "";
-            } else {
-                Swal.fire({
-                    position: "center",
-                    icon: "warning",
-                    title: "Product is already in wishlist!",
-                    showConfirmButton: true,
-                    confirmButtonColor: "#00A300",
+                let data = await response.json()
+
+                if (data.message === "Item already in cart!!") {
+                    Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: "Product is already in cart.\n So quantity increased",
+                        showConfirmButton: true,
+                        confirmButtonColor: "#00A300",
+                    });
+                } else {
+                    Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: "Product successfully added to cart",
+                        showConfirmButton: true,
+                        confirmButtonColor: "#00A300",
+                    });
+                }
+            };
+
+
+            const addToWishlist = async (productId, cartId) => {
+                const response = await fetch(`/addToWishlist?productId=${productId}&cartId=${cartId}`, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
                 });
-            }
-        };
 
+                let data = await response.json();
 
+                if (data.message === "Added to wishlist") {
+                    Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: "Product added to wishlist",
+                        showConfirmButton: true,
+                        confirmButtonColor: "#00A300",
+                    });
+
+                    document.getElementById("row" + productId).innerHTML = "";
+                } else {
+                    Swal.fire({
+                        position: "center",
+                        icon: "warning",
+                        title: "Product is already in wishlist!",
+                        showConfirmButton: true,
+                        confirmButtonColor: "#00A300",
+                    });
+                }
+            };
+
+        }
     </script>
 
     <!-- Vendor JS -->

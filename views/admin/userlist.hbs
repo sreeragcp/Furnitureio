@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>DASHMIN - Bootstrap Admin Template</title>
+    <title>FURNITUREIO</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -87,76 +87,9 @@
                 <a href="#" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars"></i>
                 </a>
-                {{!-- <form class="d-none d-md-flex ms-4">
-                    <input class="form-control border-0" type="search" placeholder="Search">
-                </form> --}}
+               
                 <div class="navbar-nav align-items-center ms-auto">
-                    {{!-- <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fa fa-envelope me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Message</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/user.jpg" alt=""
-                                        style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/user.jpg" alt=""
-                                        style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/user.jpg" alt=""
-                                        style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">See all message</a>
-                        </div>
-                    </div> --}}
-                    {{!-- <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fa fa-bell me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Notificatin</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Profile updated</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">New user added</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Password changed</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">See all notifications</a>
-                        </div>
-                    </div> --}}
+                 
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img class="rounded-circle me-lg-2" src="/adminPages/img/user.jpg" alt=""
@@ -178,28 +111,7 @@
                     <div class="col-12">
                         <div class="bg-light rounded h-100 p-4">
                             <h6 class="mb-4">CUSTOMER LIST</h6>
-                            {{!-- <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">No.</th>
-                                        <th scope="col">First Name</th>
-                                        <th scope="col">Last Name</th>
-                                        <th scope="col">Email</th>
-                                        <th scope="col">Mobile</th>
-                                        <th scope="col">Action</th>
-                                    </tr>
-                                </thead>
-                                {{#each user}}
-                                <tbody>
-                                    <tr>
-                                        <th scope="row"></th>
-                                        <td>{{this.firstName}}</td>
-                                        <td>{{this.lastName}}</td>
-                                        <td>{{this.email}}</td>
-                                    </tr>
-                                </tbody>
-                                {{/each}}
-                            </table> --}}
+                           
                             <table class="w-100">
                                 <thead class="border p-5 m-0">
                                     <tr class="row-fluid d-flex justify-content-between">
@@ -207,7 +119,6 @@
                                         <th class="col d-flex align-items-center justify-content-center">First Name</th>
                                         <th class="col d-flex align-items-center justify-content-center">Last Name</th>
                                         <th class="col-4 d-flex align-items-center justify-content-center">Email</th>
-                                        <th class="col d-flex align-items-center justify-content-center">Phone</th>
                                         <th class="col d-flex align-items-center justify-content-center ps-3 pe-3">
                                             Action</th>
 
@@ -225,8 +136,7 @@
                                             style="border-right: 1px solid rgb(231, 231, 231);">{{this.lastName}}</td>
                                         <td class="col-4 d-flex align-items-center  ps-3 pe-3 justify-content-center"
                                             style="border-right: 1px solid rgb(231, 231, 231);">{{this.email}}</td>
-                                        <td class="col d-flex align-items-center  justify-content-center"
-                                            style="border-right: 1px solid rgb(231, 231, 231);">9946864774</td>
+                                    
 
                                         {{#if this.isBlocked}}
                                         <td class="col d-flex justify-content-center align-items-center ps-3 pe-3">
@@ -253,19 +163,7 @@
 
 
             <!-- Footer Start -->
-            {{!-- <div class="container-fluid pt-4 px-4">
-                <div class="bg-light rounded-top p-4">
-                    <div class="row">
-                        <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="#">Your Site Name</a>, All Right Reserved.
-                        </div>
-                        <div class="col-12 col-sm-6 text-center text-sm-end">
-                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By <a href="https://htmlcodex.com">HTML Codex</a>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
+           
             <!-- Footer End -->
         </div>
         <!-- Content End -->

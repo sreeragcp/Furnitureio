@@ -53,6 +53,7 @@ admin_route.post('/userBlockUnblock',adminController.userBlockUnblock)
 
 admin_route.get('/loadEditProduct/:id',multer.array('image',3),adminController.loadEditProduct)
 admin_route.post('/loadEditProduct/:id',multer.array('image',3),adminController.editProduct)
+admin_route.get('/removeImage',adminController.removeImage)
 admin_route.get('/deleteProduct/:id',adminController.unlistProduct)
 
 //coupon 

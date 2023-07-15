@@ -294,7 +294,7 @@ const loadEditProduct = async (req, res) => {
         const productData = await Product.findById(proId);
 
         const category = await Category.find();
-        // console.log(productData, "product");
+        console.log(productData, "product");
         res.render("editProduct", { productData, category, user: req.session.admin });
 
     } catch (error) {
@@ -337,6 +337,18 @@ const editProduct = async (req, res) => {
         console.log(error.message);
     }
 }
+
+const removeImage =async(req,res)=>{
+    try {
+        const {imgId,productId}=req.query
+        const productData = await Product.findOneAndUpdate({_id:productId},{$pull:{images:imgId}})
+        res.json({status:"success"})
+    } catch (error) {
+        console.log(error.message)
+    }
+}
+
+
 
 const unlistProduct = async (req, res) => {
     try {
@@ -487,4 +499,5 @@ module.exports = {
     orderList,
     orderDetail,
     changeStatus,
+    removeImage
 }
