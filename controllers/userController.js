@@ -20,6 +20,7 @@ function generateOtp() {
         otp += Math.floor(Math.random() * 10);
     }
     return otp;
+    //hhhhh
 }
 
 
@@ -353,7 +354,7 @@ const productDetail = async (req, res) => {
 
             userData = req.session.user_id;
         }
-        
+
 
         res.render("productDetail", { productData, productId, cartId, categoryData, userData });
     } catch (error) {
