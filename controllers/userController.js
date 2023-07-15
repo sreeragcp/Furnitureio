@@ -193,7 +193,7 @@ const verifyLogin = async (req, res) => {
                 if (passwordMatch) {
                     req.session.user_id = userData._id;
                     let user = req.session.user_id;
-                    res.render('userHome', { categoryData: categoryData, user });
+                    res.render('userhome', { categoryData: categoryData, user });
                 } else {
                     res.render('login', { message: "Email and password is incorrect" });
                 }
