@@ -1,6 +1,14 @@
 require('dotenv').config()
 const mongoose = require("mongoose");
-mongoose.connect(process.env.MONGOURL);
+mongoose.connect("mongodb+srv://sreeragkunnothuparamba:2hwNTj8T0VzNxWWK@cluster0.6rhujbx.mongodb.net/Furnitureio", 
+(err) => {
+  if (err) {
+    console.error('Error connecting to database:', err);
+  } else {
+    console.log('Connected to database');
+  }
+});
+
 const config = {
   sessionSecret: process.env.SESSION_SECRET,
 };
