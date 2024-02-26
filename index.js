@@ -106,7 +106,8 @@ app.use('/admin',adminRoute);
 app.use(async function (req, res, next) {
   res.status(404).render("users/404");
 });
+const port=process.env.PORT || 3000
 
-app.listen(3000,function(){
+app.listen(port,function(){
     console.log("server is running...on http://localhost:3000/");
 });

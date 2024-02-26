@@ -40,12 +40,12 @@ const sendOtpMail = async (email, otp) => {
         const transporter = nodemailer.createTransport({
             service: "gmail",
             auth: {
-                user: "sreeragkunnothuparamba@gmail.com",
-                pass: "rvklnptctmecfkxj"
+                user: "plantorium1@gmail.com",
+                pass: "lhfkxofxdfyhflkq"
             },
         });
         const mailOptions = {
-            from: "srecomeragkunnothuparamba@gmail",
+            from: "plantorium1@gmail.com",
             to: email,
             subject: "your otp verification code",
             html:
@@ -225,12 +225,12 @@ const sendForgotPasswordOtp = async (email, forgotPasswordOtp) => {
         const transporter = nodemailer.createTransport({
             service: "gmail",
             auth: {
-                user: "sreeragkunnothuparamba@gmail.com",
-                pass: "rvklnptctmecfkxj"
+                user: "plantorium1@gmail.com",
+                pass: "lhfkxofxdfyhflkq"
             },
         });
         const mailOptions = {
-            from: "sreeragkunnothuparamba@gmail.com",
+            from: "plantorium1@gmail.com",
             to: email,
             subject: " FURNITUREIO  Forgot Password",
             html:
